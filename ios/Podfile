@@ -1,0 +1,19 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+install! 'cocoapods', :deterministic_uuids => false
+
+target 'SwiftCoroutines' do
+    pod 'shared', :path => '../shared/'
+    pod 'RxSwift', '~> 5'
+    pod 'RxCocoa', '~> 5'
+end
+target 'SwiftCoroutinesTests' do
+    pod 'shared', :path => '../shared/'
+    pod 'RxSwift', '~> 5'
+    pod 'RxCocoa', '~> 5'
+    
+    pod 'RxBlocking', '~> 5'
+    pod 'RxTest', '~> 5'
+end
