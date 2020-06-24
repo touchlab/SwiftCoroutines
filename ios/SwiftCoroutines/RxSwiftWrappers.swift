@@ -53,7 +53,7 @@ func createObservable<T>(
     }
 }
 
-func createNullableSingle<T>(
+func createOptionalSingle<T>(
     scope: Kotlinx_coroutines_coreCoroutineScope,
     suspendWrapper: NullableSuspendWrapper<T>,
     jobCallback: @escaping (Kotlinx_coroutines_coreJob) -> Void = { _ in }
@@ -69,7 +69,7 @@ func createNullableSingle<T>(
     }
 }
 
-func createNullableObservable<T>(
+func createOptionalObservable<T>(
     scope: Kotlinx_coroutines_coreCoroutineScope,
     flowWrapper: NullableFlowWrapper<T>,
     jobCallback: @escaping (Kotlinx_coroutines_coreJob) -> Void = { _ in }

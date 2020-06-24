@@ -29,7 +29,7 @@ class SwiftCoroutinesTests: XCTestCase {
     }
     
     func testSingleNullable() throws {
-        let single = createNullableSingle(scope: repository.scope, suspendWrapper: repository.getNullableThingWrapper(succeed: true))
+        let single = createOptionalSingle(scope: repository.scope, suspendWrapper: repository.getNullableThingWrapper(succeed: true))
         let output = single.toBlocking().materialize()
         switch output {
         case .completed(let elements):
@@ -64,7 +64,7 @@ class SwiftCoroutinesTests: XCTestCase {
     }
     
     func testObservableNullable() throws {
-        let observable = createNullableObservable(scope: repository.scope, flowWrapper: repository.getNullableThingStreamWrapper(count: 3, succeed: true))
+        let observable = createOptionalObservable(scope: repository.scope, flowWrapper: repository.getNullableThingStreamWrapper(count: 3, succeed: true))
         let output = observable.toBlocking().materialize()
         switch output {
         case .completed(let elements):
