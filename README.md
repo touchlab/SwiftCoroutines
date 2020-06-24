@@ -1,6 +1,6 @@
 ### Swift/Coroutines interop
 
-This is the code associated with the blog post at (TODO LINK). 
+This is the code associated with [this blog post](https://dev.to/touchlab/working-with-kotlin-coroutines-and-rxswift-24fa). 
 
 The `shared` directory contains Kotlin code, including a `ThingRepository` in common and a wrapper `ThingRespositoryIos` in the ios sources, which makes use of interop utilities in `SwiftCoroutines.kt`. 
 
