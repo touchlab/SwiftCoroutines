@@ -26,7 +26,7 @@ sealed class SuspendWrapperParent<T>(private val suspender: suspend () -> T) {
 class SuspendWrapper<T : Any>(suspender: suspend () -> T) : SuspendWrapperParent<T>(suspender)
 class NullableSuspendWrapper<T>(suspender: suspend () -> T) : SuspendWrapperParent<T>(suspender)
 
-sealed class FlowWrapperParent<T>(private val flow: () -> Flow<T>) {
+sealed class FlowWrapperParent<T>(private val flow: Flow<T>) {
     init {
         freeze()
     }
@@ -36,7 +36,7 @@ sealed class FlowWrapperParent<T>(private val flow: () -> Flow<T>) {
         onEach: (item: T) -> Unit,
         onComplete: () -> Unit,
         onThrow: (error: Throwable) -> Unit
-    ) = flow()
+    ) = flow
         .onEach { onEach(it.freeze()) }
         .catch { onThrow(it.freeze()) } // catch{} before onCompletion{} or else completion hits rx first and ends stream
         .onCompletion { onComplete() }
@@ -44,5 +44,5 @@ sealed class FlowWrapperParent<T>(private val flow: () -> Flow<T>) {
         .freeze()
 }
 
-class FlowWrapper<T : Any>(flow: () -> Flow<T>) : FlowWrapperParent<T>(flow)
-class NullableFlowWrapper<T>(flow: () -> Flow<T>) : FlowWrapperParent<T>(flow)
+class FlowWrapper<T : Any>(flow: Flow<T>) : FlowWrapperParent<T>(flow)
+class NullableFlowWrapper<T>(flow: Flow<T>) : FlowWrapperParent<T>(flow)

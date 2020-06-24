@@ -168,4 +168,29 @@ class SwiftCoroutinesTests: XCTestCase {
         
         XCTAssertTrue(job?.isCancelled == true)
     }
+    
+    func testBackgroundRepository() throws {
+        var backgroundRepository: ThingRepositoryIos? = nil
+
+        Completable.create { completable in
+            XCTAssertFalse(Thread.current.isMainThread)
+            backgroundRepository = ThingRepositoryIos(repository: ThingRepository())
+            completable(.completed)
+            return Disposables.create()
+        }
+        .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+        .toBlocking()
+        .materialize()
+
+        XCTAssertNotNil(backgroundRepository)
+
+        let single = createOptionalSingle(scope: backgroundRepository!.scope, suspendWrapper: backgroundRepository!.getNullableThingWrapper(succeed: true))
+        let output = single.toBlocking().materialize()
+        switch output {
+        case .completed(let elements):
+            XCTAssertEqual(elements, [nil])
+        case .failed:
+            XCTFail()
+        }
+    }
 }
