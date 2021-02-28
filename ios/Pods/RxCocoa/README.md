@@ -3,17 +3,21 @@
 
 [![Travis CI](https://travis-ci.org/ReactiveX/RxSwift.svg?branch=master)](https://travis-ci.org/ReactiveX/RxSwift) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux-333333.svg) [![pod](https://img.shields.io/cocoapods/v/RxSwift.svg)](https://cocoapods.org/pods/RxSwift) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
-Rx is a [generic abstraction of computation](https://youtu.be/looJcaeboBY) expressed through `Observable<Element>` interface.
+Rx is a [generic abstraction of computation](https://youtu.be/looJcaeboBY) expressed through `Observable<Element>`
+interface.
 
 This is a Swift version of [Rx](https://github.com/Reactive-Extensions/Rx.NET).
 
-It tries to port as many concepts from the original version as possible, but some concepts were adapted for more pleasant and performant integration with iOS/macOS environment.
+It tries to port as many concepts from the original version as possible, but some concepts were adapted for more
+pleasant and performant integration with iOS/macOS environment.
 
 Cross platform documentation can be found on [ReactiveX.io](http://reactivex.io/).
 
 Like the original Rx, its intention is to enable easy composition of asynchronous operations and event/data streams.
 
-KVO observing, async operations and streams are all unified under [abstraction of sequence](Documentation/GettingStarted.md#observables-aka-sequences). This is the reason why Rx is so simple, elegant and powerful.
+KVO observing, async operations and streams are all unified
+under [abstraction of sequence](Documentation/GettingStarted.md#observables-aka-sequences). This is the reason why Rx is
+so simple, elegant and powerful.
 
 ## I came here because I want to ...
 
@@ -21,7 +25,8 @@ KVO observing, async operations and streams are all unified under [abstraction o
 
 * [why use rx?](Documentation/Why.md)
 * [the basics, getting started with RxSwift](Documentation/GettingStarted.md)
-* [traits](Documentation/Traits.md) - what are `Single`, `Completable`, `Maybe`, `Driver`, and `ControlProperty` ... and why do they exist?
+* [traits](Documentation/Traits.md) - what are `Single`, `Completable`, `Maybe`, `Driver`, and `ControlProperty` ... and
+  why do they exist?
 * [testing](Documentation/UnitTests.md)
 * [tips and common errors](Documentation/Tips.md)
 * [debugging](Documentation/GettingStarted.md#debugging)
@@ -39,7 +44,8 @@ KVO observing, async operations and streams are all unified under [abstraction o
 
 ###### ... interact
 
-* All of this is great, but it would be nice to talk with other people using RxSwift and exchange experiences. <br />[Join Slack Channel](http://slack.rxswift.org)
+* All of this is great, but it would be nice to talk with other people using RxSwift and exchange
+  experiences. <br />[Join Slack Channel](http://slack.rxswift.org)
 * Report a problem using the library. [Open an Issue With Bug Template](.github/ISSUE_TEMPLATE.md)
 * Request a new feature. [Open an Issue With Feature Request Template](Documentation/NewFeatureRequestTemplate.md)
 * Help out [Check out contribution guide](CONTRIBUTING.md)
@@ -66,9 +72,13 @@ RxSwift comprises five separate components depending on eachother in the followi
 └──────────────┘    └──────────────┘
 ```
 
-* **RxSwift**: The core of RxSwift, providing the Rx standard as (mostly) defined by [ReactiveX](https://reactivex.io). It has no other dependencies.
-* **RxCocoa**: Provides Cocoa-specific capabilities for general iOS/macOS/watchOS & tvOS app development, such as Binders, Traits, and much more. It depends on both `RxSwift` and `RxRelay`.
-* **RxRelay**: Provides `PublishRelay` and `BehaviorRelay`, two [simple wrappers around Subjects](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Subjects.md#relays). It depends on `RxSwift`. 
+* **RxSwift**: The core of RxSwift, providing the Rx standard as (mostly) defined by [ReactiveX](https://reactivex.io).
+  It has no other dependencies.
+* **RxCocoa**: Provides Cocoa-specific capabilities for general iOS/macOS/watchOS & tvOS app development, such as
+  Binders, Traits, and much more. It depends on both `RxSwift` and `RxRelay`.
+* **RxRelay**: Provides `PublishRelay` and `BehaviorRelay`,
+  two [simple wrappers around Subjects](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Subjects.md#relays)
+  . It depends on `RxSwift`.
 * **RxTest** and **RxBlocking**: Provides testing capabilities for Rx-based systems. It depends on `RxSwift`.
 
 ###### ... find compatible
@@ -79,7 +89,9 @@ RxSwift comprises five separate components depending on eachother in the followi
 ###### ... see the broader vision
 
 * Does this exist for Android? [RxJava](https://github.com/ReactiveX/RxJava)
-* Where is all of this going, what is the future, what about reactive architectures, how do you design entire apps this way? [Cycle.js](https://github.com/cyclejs/cycle-core) - this is javascript, but [RxJS](https://github.com/Reactive-Extensions/RxJS) is javascript version of Rx.
+* Where is all of this going, what is the future, what about reactive architectures, how do you design entire apps this
+  way? [Cycle.js](https://github.com/cyclejs/cycle-core) - this is javascript,
+  but [RxJS](https://github.com/Reactive-Extensions/RxJS) is javascript version of Rx.
 
 ## Usage
 
@@ -120,7 +132,6 @@ searchResults
     .disposed(by: disposeBag)</pre></div></td>
   </tr>
 </table>
-
 
 ## Requirements
 
@@ -179,9 +190,10 @@ $ carthage update
 
 #### Carthage as a Static Library
 
-Carthage defaults to building RxSwift as a Dynamic Library. 
+Carthage defaults to building RxSwift as a Dynamic Library.
 
-If you wish to build RxSwift as a Static Library using Carthage you may use the script below to manually modify the framework type before building with Carthage:
+If you wish to build RxSwift as a Static Library using Carthage you may use the script below to manually modify the
+framework type before building with Carthage:
 
 ```bash
 carthage update RxSwift --platform iOS --no-build
@@ -228,7 +240,8 @@ $ git submodule add git@github.com:ReactiveX/RxSwift.git
 ```
 
 * Drag `Rx.xcodeproj` into Project Navigator
-* Go to `Project > Targets > Build Phases > Link Binary With Libraries`, click `+` and select `RxSwift-[Platform]` and `RxCocoa-[Platform]` targets
+* Go to `Project > Targets > Build Phases > Link Binary With Libraries`, click `+` and select `RxSwift-[Platform]`
+  and `RxCocoa-[Platform]` targets
 
 ## References
 

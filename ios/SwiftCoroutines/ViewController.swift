@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var disposable: Disposable? = nil
 
     override func viewDidAppear(_ animated: Bool) {
-        disposable = createObservable(scope: repository.scope, flowWrapper: repository.getThingStreamWrapper(count: 3, succeed: true))
+        disposable = createObservable(flowWrapper: repository.getThingStreamWrapper(count: 3, succeed: true))
             .subscribe(
                 onNext: { thing in
                     NSLog("next: \(thing)")

@@ -521,7 +521,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ED5F7F45422D363781784ED5 /* Pods-SwiftCoroutinesTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftCoroutinesTests/Info.plist;
@@ -543,7 +542,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 183615E339339DAD7AD9FB4D /* Pods-SwiftCoroutinesTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftCoroutinesTests/Info.plist;

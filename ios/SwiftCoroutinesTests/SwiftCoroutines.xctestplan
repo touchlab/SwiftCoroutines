@@ -1,0 +1,23 @@
+{
+  "configurations" : [
+    {
+      "id" : "418E6F56-E668-4EE2-8678-7BD1F06FB1E9",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SwiftCoroutines.xcodeproj",
+      "identifier" : "46856E512491D6B500605467",
+      "name" : "SwiftCoroutines"
+    }
+  },
+  "testTargets" : [
+
+  ],
+  "version" : 1
+}

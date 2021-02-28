@@ -5,13 +5,15 @@ import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlin.native.concurrent.freeze
 
-sealed class SuspendWrapperParent<T>(private val suspender: suspend () -> T) {
+class SuspendWrapper<T : Any>(
+    private val scope: CoroutineScope,
+    private val suspender: suspend () -> T
+) {
     init {
         freeze()
     }
 
     fun subscribe(
-        scope: CoroutineScope,
         onSuccess: (item: T) -> Unit,
         onThrow: (error: Throwable) -> Unit
     ) = scope.launch {
@@ -23,16 +25,35 @@ sealed class SuspendWrapperParent<T>(private val suspender: suspend () -> T) {
     }.freeze()
 }
 
-class SuspendWrapper<T : Any>(suspender: suspend () -> T) : SuspendWrapperParent<T>(suspender)
-class NullableSuspendWrapper<T>(suspender: suspend () -> T) : SuspendWrapperParent<T>(suspender)
-
-sealed class FlowWrapperParent<T>(private val flow: Flow<T>) {
+class NullableSuspendWrapper<T>(
+    private val scope: CoroutineScope,
+    private val suspender: suspend () -> T
+) {
     init {
         freeze()
     }
 
     fun subscribe(
-        scope: CoroutineScope,
+        onSuccess: (item: T) -> Unit,
+        onThrow: (error: Throwable) -> Unit
+    ) = scope.launch {
+        try {
+            onSuccess(suspender().freeze())
+        } catch (error: Throwable) {
+            onThrow(error.freeze())
+        }
+    }.freeze()
+}
+
+class FlowWrapper<T : Any>(
+    private val scope: CoroutineScope,
+    private val flow: Flow<T>
+) {
+    init {
+        freeze()
+    }
+
+    fun subscribe(
         onEach: (item: T) -> Unit,
         onComplete: () -> Unit,
         onThrow: (error: Throwable) -> Unit
@@ -44,5 +65,22 @@ sealed class FlowWrapperParent<T>(private val flow: Flow<T>) {
         .freeze()
 }
 
-class FlowWrapper<T : Any>(flow: Flow<T>) : FlowWrapperParent<T>(flow)
-class NullableFlowWrapper<T>(flow: Flow<T>) : FlowWrapperParent<T>(flow)
+class NullableFlowWrapper<T>(
+    private val scope: CoroutineScope,
+    private val flow: Flow<T>
+) {
+    init {
+        freeze()
+    }
+
+    fun subscribe(
+        onEach: (item: T) -> Unit,
+        onComplete: () -> Unit,
+        onThrow: (error: Throwable) -> Unit
+    ) = flow
+        .onEach { onEach(it.freeze()) }
+        .catch { onThrow(it.freeze()) } // catch{} before onCompletion{} or else completion hits rx first and ends stream
+        .onCompletion { onComplete() }
+        .launchIn(scope)
+        .freeze()
+}

@@ -7,22 +7,24 @@ import co.touchlab.swiftcoroutines.SuspendWrapper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
-import kotlin.coroutines.CoroutineContext
 import kotlin.native.concurrent.freeze
 
 class ThingRepositoryIos(private val repository: ThingRepository) {
-    val scope: CoroutineScope = object : CoroutineScope {
-        override val coroutineContext: CoroutineContext
-            get() = SupervisorJob() + Dispatchers.Default
-    }
+    private val scope: CoroutineScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
 
     init {
         freeze()
     }
 
-    fun getThingWrapper(succeed: Boolean) = SuspendWrapper { repository.getThing(succeed) }
-    fun getThingStreamWrapper(count: Int, succeed: Boolean) = FlowWrapper(repository.getThingStream(count, succeed))
-    fun getNullableThingWrapper(succeed: Boolean) = NullableSuspendWrapper { repository.getNullableThing(succeed) }
+    fun getThingWrapper(succeed: Boolean) =
+        SuspendWrapper(scope) { repository.getThing(succeed) }
+
+    fun getThingStreamWrapper(count: Int, succeed: Boolean) =
+        FlowWrapper(scope, repository.getThingStream(count, succeed))
+
+    fun getNullableThingWrapper(succeed: Boolean) =
+        NullableSuspendWrapper(scope) { repository.getNullableThing(succeed) }
+
     fun getNullableThingStreamWrapper(count: Int, succeed: Boolean) =
-        NullableFlowWrapper(repository.getNullableThingStream(count, succeed))
+        NullableFlowWrapper(scope, repository.getNullableThingStream(count, succeed))
 }

@@ -3,4 +3,3 @@ ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
 ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
 ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
 ${PODS_ROOT}/../../shared/build/cocoapods/framework/shared.framework
-${PODS_ROOT}/../../shared/build/cocoapods/framework/shared.framework.dSYM
