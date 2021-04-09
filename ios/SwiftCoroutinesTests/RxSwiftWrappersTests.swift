@@ -13,7 +13,7 @@ import RxSwift
 import RxTest
 import RxBlocking
 
-class SwiftCoroutinesTests: XCTestCase {
+class RxSwiftWrappersTests: XCTestCase {
     
     let repository = ThingRepositoryIos(repository: ThingRepository())
     
@@ -122,6 +122,7 @@ class SwiftCoroutinesTests: XCTestCase {
         let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
         let output = Completable.create { completable in
             XCTAssertFalse(Thread.current.isMainThread)
+            XCTAssertNotNil(job)
             disposable?.dispose()
             completable(.completed)
             return Disposables.create()

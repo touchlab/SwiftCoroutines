@@ -13,8 +13,11 @@
 		46856E5D2491D6B500605467 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46856E5B2491D6B500605467 /* Main.storyboard */; };
 		46856E5F2491D6B700605467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46856E5E2491D6B700605467 /* Assets.xcassets */; };
 		46856E622491D6B700605467 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46856E602491D6B700605467 /* LaunchScreen.storyboard */; };
-		46856E6D2491D6B800605467 /* SwiftCoroutinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46856E6C2491D6B800605467 /* SwiftCoroutinesTests.swift */; };
+		46856E6D2491D6B800605467 /* RxSwiftWrappersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46856E6C2491D6B800605467 /* RxSwiftWrappersTests.swift */; };
 		46856E782491DC2200605467 /* RxSwiftWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46856E772491DC2200605467 /* RxSwiftWrappers.swift */; };
+		468AFF8225EC1DA100B60DF4 /* CombineWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468AFF8125EC1DA100B60DF4 /* CombineWrappers.swift */; };
+		468AFF8625EC225000B60DF4 /* KotlinError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468AFF8525EC225000B60DF4 /* KotlinError.swift */; };
+		468AFF8C25EC28C700B60DF4 /* CombineWrappersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468AFF8B25EC28C700B60DF4 /* CombineWrappersTests.swift */; };
 		A5D48D5F00DE4E711823AF5E /* Pods_SwiftCoroutines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD160C4743E68AB5A65CEE65 /* Pods_SwiftCoroutines.framework */; };
 		D05CFA3A125E4A77892D3BB2 /* Pods_SwiftCoroutinesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25BCFC12851E9EC9C0FE3443 /* Pods_SwiftCoroutinesTests.framework */; };
 /* End PBXBuildFile section */
@@ -41,9 +44,12 @@
 		46856E612491D6B700605467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46856E632491D6B700605467 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46856E682491D6B800605467 /* SwiftCoroutinesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCoroutinesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		46856E6C2491D6B800605467 /* SwiftCoroutinesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCoroutinesTests.swift; sourceTree = "<group>"; };
+		46856E6C2491D6B800605467 /* RxSwiftWrappersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftWrappersTests.swift; sourceTree = "<group>"; };
 		46856E6E2491D6B800605467 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46856E772491DC2200605467 /* RxSwiftWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftWrappers.swift; sourceTree = "<group>"; };
+		468AFF8125EC1DA100B60DF4 /* CombineWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineWrappers.swift; sourceTree = "<group>"; };
+		468AFF8525EC225000B60DF4 /* KotlinError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KotlinError.swift; sourceTree = "<group>"; };
+		468AFF8B25EC28C700B60DF4 /* CombineWrappersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineWrappersTests.swift; sourceTree = "<group>"; };
 		AD160C4743E68AB5A65CEE65 /* Pods_SwiftCoroutines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftCoroutines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B56FE63DF54E16453D7535 /* Pods-SwiftCoroutines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCoroutines.release.xcconfig"; path = "Target Support Files/Pods-SwiftCoroutines/Pods-SwiftCoroutines.release.xcconfig"; sourceTree = "<group>"; };
 		E8A9A40AD32F6BE5307821F3 /* Pods-SwiftCoroutines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCoroutines.debug.xcconfig"; path = "Target Support Files/Pods-SwiftCoroutines/Pods-SwiftCoroutines.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +127,8 @@
 				46856E602491D6B700605467 /* LaunchScreen.storyboard */,
 				46856E632491D6B700605467 /* Info.plist */,
 				46856E772491DC2200605467 /* RxSwiftWrappers.swift */,
+				468AFF8125EC1DA100B60DF4 /* CombineWrappers.swift */,
+				468AFF8525EC225000B60DF4 /* KotlinError.swift */,
 			);
 			path = SwiftCoroutines;
 			sourceTree = "<group>";
@@ -128,7 +136,8 @@
 		46856E6B2491D6B800605467 /* SwiftCoroutinesTests */ = {
 			isa = PBXGroup;
 			children = (
-				46856E6C2491D6B800605467 /* SwiftCoroutinesTests.swift */,
+				46856E6C2491D6B800605467 /* RxSwiftWrappersTests.swift */,
+				468AFF8B25EC28C700B60DF4 /* CombineWrappersTests.swift */,
 				46856E6E2491D6B800605467 /* Info.plist */,
 			);
 			path = SwiftCoroutinesTests;
@@ -322,6 +331,8 @@
 			files = (
 				46856E5A2491D6B500605467 /* ViewController.swift in Sources */,
 				46856E562491D6B500605467 /* AppDelegate.swift in Sources */,
+				468AFF8225EC1DA100B60DF4 /* CombineWrappers.swift in Sources */,
+				468AFF8625EC225000B60DF4 /* KotlinError.swift in Sources */,
 				46856E582491D6B500605467 /* SceneDelegate.swift in Sources */,
 				46856E782491DC2200605467 /* RxSwiftWrappers.swift in Sources */,
 			);
@@ -331,7 +342,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46856E6D2491D6B800605467 /* SwiftCoroutinesTests.swift in Sources */,
+				46856E6D2491D6B800605467 /* RxSwiftWrappersTests.swift in Sources */,
+				468AFF8C25EC28C700B60DF4 /* CombineWrappersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

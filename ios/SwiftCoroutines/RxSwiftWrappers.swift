@@ -10,16 +10,6 @@ import Foundation
 import RxSwift
 import shared
 
-class KotlinError: LocalizedError {
-    let throwable: KotlinThrowable
-    init(_ throwable: KotlinThrowable) {
-        self.throwable = throwable
-    }
-    var errorDescription: String? {
-        get { throwable.message }
-    }
-}
-
 func createSingle<T>(
     suspendWrapper: SuspendWrapper<T>,
     jobCallback: @escaping (Kotlinx_coroutines_coreJob) -> Void = { _ in }
