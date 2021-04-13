@@ -43,14 +43,13 @@ func createOptionalPublisher<T>(flowWrapper: NullableFlowWrapper<T>) -> AnyPubli
 }
 
 func createFuture<T>(suspendWrapper: SuspendWrapper<T>) -> AnyPublisher<T, KotlinError> {
-    var job: Kotlinx_coroutines_coreJob? = nil
-    return Deferred {
+    return Deferred<Publishers.HandleEvents<Future<T, KotlinError>>> {
+        var job: Kotlinx_coroutines_coreJob? = nil
         return Future { promise in
-            let innerJob = suspendWrapper.subscribe(
+            job = suspendWrapper.subscribe(
                 onSuccess: { item in promise(.success(item)) },
                 onThrow: { error in promise(.failure(KotlinError(error))) }
             )
-            job = innerJob
         }.handleEvents(receiveCancel: {
             job?.cancel(cause: nil)
         })
@@ -59,14 +58,13 @@ func createFuture<T>(suspendWrapper: SuspendWrapper<T>) -> AnyPublisher<T, Kotli
 }
 
 func createOptionalFuture<T>(suspendWrapper: NullableSuspendWrapper<T>) -> AnyPublisher<T?, KotlinError> {
-    var job: Kotlinx_coroutines_coreJob? = nil
-    return Deferred {
+    return Deferred<Publishers.HandleEvents<Future<T?, KotlinError>>> {
+        var job: Kotlinx_coroutines_coreJob? = nil
         return Future { promise in
-            let innerJob = suspendWrapper.subscribe(
+            job = suspendWrapper.subscribe(
                 onSuccess: { item in promise(.success(item)) },
                 onThrow: { error in promise(.failure(KotlinError(error))) }
             )
-            job = innerJob
         }.handleEvents(receiveCancel: {
             job?.cancel(cause: nil)
         })

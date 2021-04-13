@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SwiftCoroutinesTests/TestPlan.xctestplan">
+   </FileRef>
+   <FileRef
       location = "group:SwiftCoroutines.xcodeproj">
    </FileRef>
    <FileRef

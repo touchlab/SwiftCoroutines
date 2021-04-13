@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "B0CF85ED-16E6-474E-BE79-955858EBCC02",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SwiftCoroutines.xcodeproj",
+        "identifier" : "46856E672491D6B800605467",
+        "name" : "SwiftCoroutinesTests"
+      }
+    }
+  ],
+  "version" : 1
+}
