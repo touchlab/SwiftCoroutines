@@ -114,16 +114,14 @@ class RxSwiftWrappersTests: XCTestCase {
     }
     
     func testBackgroundSingleDispose() throws {
-        var disposable: Disposable? = nil
-        var job: Kotlinx_coroutines_coreJob? = nil
-        let single = createSingle(suspendWrapper: repository.getThingWrapper(succeed: false), jobCallback: { j in job = j })
-        disposable = single.subscribe()
+        let single = createSingle(suspendWrapper: repository.getThingWrapper(succeed: false))
+        let disposable = single.subscribe()
         
         let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
         let output = Completable.create { completable in
             XCTAssertFalse(Thread.current.isMainThread)
-            XCTAssertNotNil(job)
-            disposable?.dispose()
+            XCTAssertEqual(1, self.repository.countActiveJobs())
+            disposable.dispose()
             completable(.completed)
             return Disposables.create()
         }
@@ -131,7 +129,7 @@ class RxSwiftWrappersTests: XCTestCase {
         .delay(RxTimeInterval.milliseconds(50), scheduler: backgroundScheduler)
         .toBlocking()
         .materialize()
-        
+         
         switch output {
         case .completed(let elements):
             XCTAssertEqual(elements, [])
@@ -139,19 +137,18 @@ class RxSwiftWrappersTests: XCTestCase {
             XCTFail()
         }
         
-        XCTAssertTrue(job?.isCancelled == true)
+        XCTAssertEqual(0, self.repository.countActiveJobs())
     }
     
     func testBackgroundObservableDispose() throws {
-        var disposable: Disposable? = nil
-        var job: Kotlinx_coroutines_coreJob? = nil
-        let observable = createObservable(flowWrapper: repository.getThingStreamWrapper(count: 3, succeed: true), jobCallback: { j in job = j })
-        disposable = observable.subscribe()
+        let observable = createObservable(flowWrapper: repository.getThingStreamWrapper(count: 3, succeed: true))
+        let disposable = observable.subscribe()
 
         let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
         let output = Completable.create { completable in
             XCTAssertFalse(Thread.current.isMainThread)
-            disposable?.dispose()
+            XCTAssertEqual(1, self.repository.countActiveJobs())
+            disposable.dispose()
             completable(.completed)
             return Disposables.create()
         }
@@ -167,13 +164,13 @@ class RxSwiftWrappersTests: XCTestCase {
             XCTFail()
         }
         
-        XCTAssertTrue(job?.isCancelled == true)
+        XCTAssertEqual(0, self.repository.countActiveJobs())
     }
     
     func testBackgroundRepository() throws {
         var backgroundRepository: ThingRepositoryIos? = nil
 
-        Completable.create { completable in
+        let _ = Completable.create { completable in
             XCTAssertFalse(Thread.current.isMainThread)
             backgroundRepository = ThingRepositoryIos(repository: ThingRepository())
             completable(.completed)

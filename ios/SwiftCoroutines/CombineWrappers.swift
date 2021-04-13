@@ -10,10 +10,7 @@ import Foundation
 import Combine
 import shared
 
-func createPublisher<T>(
-    flowWrapper: FlowWrapper<T>,
-    jobCallback: @escaping (Kotlinx_coroutines_coreJob) -> Void = { _ in }
-) -> AnyPublisher<T, KotlinError> {
+func createPublisher<T>(flowWrapper: FlowWrapper<T>) -> AnyPublisher<T, KotlinError> {
     return Deferred<Publishers.HandleEvents<PassthroughSubject<T, KotlinError>>> {
         let subject = PassthroughSubject<T, KotlinError>()
         let job = flowWrapper.subscribe { (item) in
@@ -23,17 +20,13 @@ func createPublisher<T>(
         } onThrow: { (error) in
             subject.send(completion: .failure(KotlinError(error)))
         }
-        jobCallback(job)
         return subject.handleEvents(receiveCancel: {
             job.cancel(cause: nil)
         })
     }.eraseToAnyPublisher()
 }
 
-func createOptionalPublisher<T>(
-    flowWrapper: NullableFlowWrapper<T>,
-    jobCallback: @escaping (Kotlinx_coroutines_coreJob) -> Void = { _ in }
-) -> AnyPublisher<T?, KotlinError> {
+func createOptionalPublisher<T>(flowWrapper: NullableFlowWrapper<T>) -> AnyPublisher<T?, KotlinError> {
     return Deferred<Publishers.HandleEvents<PassthroughSubject<T?, KotlinError>>> {
         let subject = PassthroughSubject<T?, KotlinError>()
         let job = flowWrapper.subscribe { (item) in
@@ -43,17 +36,13 @@ func createOptionalPublisher<T>(
         } onThrow: { (error) in
             subject.send(completion: .failure(KotlinError(error)))
         }
-        jobCallback(job)
         return subject.handleEvents(receiveCancel: {
             job.cancel(cause: nil)
         })
     }.eraseToAnyPublisher()
 }
 
-func createDeferred<T>(
-    suspendWrapper: SuspendWrapper<T>,
-    jobCallback: @escaping (Kotlinx_coroutines_coreJob) -> Void = { _ in }
-) -> AnyPublisher<T, KotlinError> {
+func createFuture<T>(suspendWrapper: SuspendWrapper<T>) -> AnyPublisher<T, KotlinError> {
     var job: Kotlinx_coroutines_coreJob? = nil
     return Deferred {
         return Future { promise in
@@ -61,7 +50,6 @@ func createDeferred<T>(
                 onSuccess: { item in promise(.success(item)) },
                 onThrow: { error in promise(.failure(KotlinError(error))) }
             )
-            jobCallback(innerJob)
             job = innerJob
         }.handleEvents(receiveCancel: {
             job?.cancel(cause: nil)
@@ -70,10 +58,7 @@ func createDeferred<T>(
     .eraseToAnyPublisher()
 }
 
-func createOptionalDeferred<T>(
-    suspendWrapper: NullableSuspendWrapper<T>,
-    jobCallback: @escaping (Kotlinx_coroutines_coreJob) -> Void = { _ in }
-) -> AnyPublisher<T?, KotlinError> {
+func createOptionalFuture<T>(suspendWrapper: NullableSuspendWrapper<T>) -> AnyPublisher<T?, KotlinError> {
     var job: Kotlinx_coroutines_coreJob? = nil
     return Deferred {
         return Future { promise in
@@ -81,7 +66,6 @@ func createOptionalDeferred<T>(
                 onSuccess: { item in promise(.success(item)) },
                 onThrow: { error in promise(.failure(KotlinError(error))) }
             )
-            jobCallback(innerJob)
             job = innerJob
         }.handleEvents(receiveCancel: {
             job?.cancel(cause: nil)

@@ -6,6 +6,7 @@ import co.touchlab.swiftcoroutines.NullableSuspendWrapper
 import co.touchlab.swiftcoroutines.SuspendWrapper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlin.native.concurrent.freeze
 
@@ -27,4 +28,7 @@ class ThingRepositoryIos(private val repository: ThingRepository) {
 
     fun getNullableThingStreamWrapper(count: Int, succeed: Boolean) =
         NullableFlowWrapper(scope, repository.getNullableThingStream(count, succeed))
+
+    // Helps verify cancellation in tests
+    fun countActiveJobs() = scope.coroutineContext[Job]?.children?.filter { it.isActive }?.count() ?: 0
 }

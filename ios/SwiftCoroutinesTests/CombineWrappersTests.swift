@@ -14,24 +14,24 @@ import Combine
 class CombineWrappersTests: XCTestCase {
     let repository = ThingRepositoryIos(repository: ThingRepository())
     
-    func testDeferredCall() throws {
-        let deferred = createDeferred(suspendWrapper: repository.getThingWrapper(succeed: true))
+    func testFutureCall() throws {
+        let future = createFuture(suspendWrapper: repository.getThingWrapper(succeed: true))
         
-        let output = try await(deferred)
+        let output = try await(future)
         XCTAssertEqual(output, .success([Thing(count: 0)]))
     }
 
-    func testDeferredNullable() throws {
-        let deferred = createOptionalDeferred(suspendWrapper: repository.getNullableThingWrapper(succeed: true))
+    func testFutureNullable() throws {
+        let future = createOptionalFuture(suspendWrapper: repository.getNullableThingWrapper(succeed: true))
         
-        let output = try await(deferred)
+        let output = try await(future)
         XCTAssertEqual(output, .success([nil]))
     }
     
-    func testDeferredError() throws {
-        let deferred = createDeferred(suspendWrapper: repository.getThingWrapper(succeed: false))
+    func testFutureError() throws {
+        let future = createFuture(suspendWrapper: repository.getThingWrapper(succeed: false))
 
-        let output = try await(deferred)
+        let output = try await(future)
         XCTAssertEqual(output, .failure(items: [], error: KotlinError(KotlinThrowable(message: "oh no!"))))
     }
     
@@ -56,8 +56,8 @@ class CombineWrappersTests: XCTestCase {
         XCTAssertEqual(output, .failure(items: [Thing(count: 0)], error: KotlinError(KotlinThrowable(message: "oops!"))))
     }
     
-    func testBackgroundDeferredCall() throws {
-        let publisher = createDeferred(suspendWrapper: repository.getThingWrapper(succeed: true))
+    func testBackgroundFutureCall() throws {
+        let publisher = createFuture(suspendWrapper: repository.getThingWrapper(succeed: true))
             .subscribe(on: DispatchQueue.global())
             .map { (thing) -> Thing in
                 XCTAssertFalse(Thread.isMainThread)
@@ -68,24 +68,20 @@ class CombineWrappersTests: XCTestCase {
         XCTAssertEqual(output, .success([Thing(count: 0)]))
     }
 
-    func testBackgroundDeferredDispose() throws {
-        var cancellable: AnyCancellable? = nil
-        var job: Kotlinx_coroutines_coreJob? = nil
-
-        
-        cancellable = createDeferred(suspendWrapper: repository.getThingWrapper(succeed: true), jobCallback: { j in job = j })
+    func testBackgroundFutureDispose() throws {
+        let cancellable = createFuture(suspendWrapper: repository.getThingWrapper(succeed: true))
             .sink(receiveCompletion: { _ in }, receiveValue: { _ in })
         
         let latch = expectation(description: "background test")
         DispatchQueue.global().async {
             XCTAssertFalse(Thread.current.isMainThread)
-            XCTAssertNotNil(job)
-            cancellable?.cancel()
+            XCTAssertEqual(1, self.repository.countActiveJobs())
+            cancellable.cancel()
             latch.fulfill()
         }
         
         waitForExpectations(timeout: 10)
-        XCTAssertTrue(job?.isCancelled == true)
+        XCTAssertEqual(0, self.repository.countActiveJobs())
     }
     
     func testBackgroundPublisherCall() throws {
@@ -101,23 +97,19 @@ class CombineWrappersTests: XCTestCase {
     }
 
     func testBackgroundPublisherDispose() throws {
-        var cancellable: AnyCancellable? = nil
-        var job: Kotlinx_coroutines_coreJob? = nil
-
-        
-        cancellable = createPublisher(flowWrapper: repository.getThingStreamWrapper(count: 3, succeed: true), jobCallback: { j in job = j })
+        let cancellable = createPublisher(flowWrapper: repository.getThingStreamWrapper(count: 3, succeed: true))
             .sink(receiveCompletion: { _ in }, receiveValue: { _ in })
         
         let latch = expectation(description: "background test")
         DispatchQueue.global().async {
             XCTAssertFalse(Thread.current.isMainThread)
-            XCTAssertNotNil(job)
-            cancellable?.cancel()
+            XCTAssertEqual(1, self.repository.countActiveJobs())
+            cancellable.cancel()
             latch.fulfill()
         }
         
         waitForExpectations(timeout: 10)
-        XCTAssertTrue(job?.isCancelled == true)
+        XCTAssertEqual(0, self.repository.countActiveJobs())
     }
     
     func testBackgroundRepository() throws {
