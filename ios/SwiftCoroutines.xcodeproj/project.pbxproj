@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		463A518D2626473D00611EF0 /* SwiftUIDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A518C2626473D00611EF0 /* SwiftUIDemo.swift */; };
 		46856E562491D6B500605467 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46856E552491D6B500605467 /* AppDelegate.swift */; };
 		46856E582491D6B500605467 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46856E572491D6B500605467 /* SceneDelegate.swift */; };
-		46856E5A2491D6B500605467 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46856E592491D6B500605467 /* ViewController.swift */; };
 		46856E5D2491D6B500605467 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46856E5B2491D6B500605467 /* Main.storyboard */; };
 		46856E5F2491D6B700605467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46856E5E2491D6B700605467 /* Assets.xcassets */; };
 		46856E622491D6B700605467 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46856E602491D6B700605467 /* LaunchScreen.storyboard */; };
@@ -35,10 +35,10 @@
 /* Begin PBXFileReference section */
 		183615E339339DAD7AD9FB4D /* Pods-SwiftCoroutinesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCoroutinesTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftCoroutinesTests/Pods-SwiftCoroutinesTests.release.xcconfig"; sourceTree = "<group>"; };
 		25BCFC12851E9EC9C0FE3443 /* Pods_SwiftCoroutinesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftCoroutinesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		463A518C2626473D00611EF0 /* SwiftUIDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIDemo.swift; sourceTree = "<group>"; };
 		46856E522491D6B500605467 /* SwiftCoroutines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCoroutines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46856E552491D6B500605467 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46856E572491D6B500605467 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		46856E592491D6B500605467 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		46856E5C2491D6B500605467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46856E5E2491D6B700605467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46856E612491D6B700605467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 			children = (
 				46856E552491D6B500605467 /* AppDelegate.swift */,
 				46856E572491D6B500605467 /* SceneDelegate.swift */,
-				46856E592491D6B500605467 /* ViewController.swift */,
+				463A518C2626473D00611EF0 /* SwiftUIDemo.swift */,
 				46856E5B2491D6B500605467 /* Main.storyboard */,
 				46856E5E2491D6B700605467 /* Assets.xcassets */,
 				46856E602491D6B700605467 /* LaunchScreen.storyboard */,
@@ -329,12 +329,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46856E5A2491D6B500605467 /* ViewController.swift in Sources */,
 				46856E562491D6B500605467 /* AppDelegate.swift in Sources */,
 				468AFF8225EC1DA100B60DF4 /* CombineWrappers.swift in Sources */,
 				468AFF8625EC225000B60DF4 /* KotlinError.swift in Sources */,
 				46856E582491D6B500605467 /* SceneDelegate.swift in Sources */,
 				46856E782491DC2200605467 /* RxSwiftWrappers.swift in Sources */,
+				463A518D2626473D00611EF0 /* SwiftUIDemo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
