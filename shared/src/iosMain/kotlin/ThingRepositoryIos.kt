@@ -8,10 +8,12 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancelChildren
 import kotlin.native.concurrent.freeze
 
 class ThingRepositoryIos(private val repository: ThingRepository) {
-    private val scope: CoroutineScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
+    private val supervisorJob = SupervisorJob()
+    private val scope: CoroutineScope = CoroutineScope(supervisorJob + Dispatchers.Default)
 
     init {
         freeze()
@@ -31,4 +33,8 @@ class ThingRepositoryIos(private val repository: ThingRepository) {
 
     // Helps verify cancellation in tests
     fun countActiveJobs() = scope.coroutineContext[Job]?.children?.filter { it.isActive }?.count() ?: 0
+
+    fun dispose() {
+        supervisorJob.cancelChildren()
+    }
 }

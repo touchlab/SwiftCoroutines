@@ -15,10 +15,10 @@ import RxBlocking
 
 class RxSwiftWrappersTests: XCTestCase {
     
-    let repository = ThingRepositoryIos(repository: ThingRepository())
+    let repository = ThingRepositoryRxSwift()
     
     func testSingleCall() throws {
-        let single = createSingle(suspendWrapper: repository.getThingWrapper(succeed: true))
+        let single = repository.getThing(succeed: true)
         let output = single.toBlocking().materialize()
         switch output {
         case .completed(let elements):
@@ -29,7 +29,7 @@ class RxSwiftWrappersTests: XCTestCase {
     }
     
     func testSingleNullable() throws {
-        let single = createOptionalSingle(suspendWrapper: repository.getNullableThingWrapper(succeed: true))
+        let single = repository.getOptionalThing(succeed: true)
         let output = single.toBlocking().materialize()
         switch output {
         case .completed(let elements):
@@ -40,7 +40,7 @@ class RxSwiftWrappersTests: XCTestCase {
     }
     
     func testSingleError() throws {
-        let single = createSingle(suspendWrapper: repository.getThingWrapper(succeed: false))
+        let single = repository.getThing(succeed: false)
         let output = single.toBlocking().materialize()
         switch output {
         case .completed:
@@ -53,7 +53,7 @@ class RxSwiftWrappersTests: XCTestCase {
     }
     
     func testObservableCall() throws {
-        let observable = createObservable(flowWrapper: repository.getThingStreamWrapper(count: 3, succeed: true))
+        let observable = repository.getThingStream(count: 3, succeed: true)
         let output = observable.toBlocking().materialize()
         switch output {
         case .completed(let elements):
@@ -64,7 +64,7 @@ class RxSwiftWrappersTests: XCTestCase {
     }
     
     func testObservableNullable() throws {
-        let observable = createOptionalObservable(flowWrapper: repository.getNullableThingStreamWrapper(count: 3, succeed: true))
+        let observable = repository.getOptionalThingStream(count: 3, succeed: true)
         let output = observable.toBlocking().materialize()
         switch output {
         case .completed(let elements):
@@ -75,7 +75,7 @@ class RxSwiftWrappersTests: XCTestCase {
     }
     
     func testObservableError() throws {
-        let observable = createObservable(flowWrapper: repository.getThingStreamWrapper(count: 1, succeed: false))
+        let observable = repository.getThingStream(count: 1, succeed: false)
         let output = observable.toBlocking().materialize()
         switch output {
         case .completed:
@@ -88,7 +88,7 @@ class RxSwiftWrappersTests: XCTestCase {
     }
     
     func testBackgroundSingle() throws {
-        let single = createSingle(suspendWrapper: repository.getThingWrapper(succeed: true))
+        let single = repository.getThing(succeed: true)
             .do(onSuccess: { _ in XCTAssertFalse(Thread.current.isMainThread) })
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
         let output = single.toBlocking().materialize()
@@ -101,7 +101,7 @@ class RxSwiftWrappersTests: XCTestCase {
     }
        
     func testBackgroundObservable() throws {
-        let observable = createObservable(flowWrapper: repository.getThingStreamWrapper(count: 3, succeed: true))
+        let observable = repository.getThingStream(count: 3, succeed: true)
             .do(onNext: { _ in XCTAssertFalse(Thread.current.isMainThread) })
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
         let output = observable.toBlocking().materialize()
@@ -114,7 +114,7 @@ class RxSwiftWrappersTests: XCTestCase {
     }
     
     func testBackgroundSingleDispose() throws {
-        let single = createSingle(suspendWrapper: repository.getThingWrapper(succeed: false))
+        let single = repository.getThing(succeed: false)
         let disposable = single.subscribe()
         
         let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
@@ -141,7 +141,7 @@ class RxSwiftWrappersTests: XCTestCase {
     }
     
     func testBackgroundObservableDispose() throws {
-        let observable = createObservable(flowWrapper: repository.getThingStreamWrapper(count: 3, succeed: true))
+        let observable = repository.getThingStream(count: 3, succeed: true)
         let disposable = observable.subscribe()
 
         let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
@@ -168,11 +168,11 @@ class RxSwiftWrappersTests: XCTestCase {
     }
     
     func testBackgroundRepository() throws {
-        var backgroundRepository: ThingRepositoryIos? = nil
+        var backgroundRepository: ThingRepositoryRxSwift? = nil
 
         let _ = Completable.create { completable in
             XCTAssertFalse(Thread.current.isMainThread)
-            backgroundRepository = ThingRepositoryIos(repository: ThingRepository())
+            backgroundRepository = ThingRepositoryRxSwift()
             completable(.completed)
             return Disposables.create()
         }
@@ -182,7 +182,7 @@ class RxSwiftWrappersTests: XCTestCase {
 
         XCTAssertNotNil(backgroundRepository)
 
-        let single = createOptionalSingle(suspendWrapper: backgroundRepository!.getNullableThingWrapper(succeed: true))
+        let single = backgroundRepository!.getOptionalThing(succeed: true)
         let output = single.toBlocking().materialize()
         switch output {
         case .completed(let elements):

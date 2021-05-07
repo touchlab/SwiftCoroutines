@@ -12,8 +12,12 @@ class ThingModel: ObservableObject {
         createPublisher(flowWrapper: repository.getThingStreamWrapper(count: 100, succeed: true))
             .replaceError(with: Thing(count: -1))
             .receive(on: DispatchQueue.main)
-            .sink { thing in self.thing = thing }
+            .sink { [weak self] thing in self?.thing = thing }
             .store(in: &cancellables)
+    }
+    
+    func cancel() {
+        cancellables.forEach { $0.cancel() }
     }
 }
 
@@ -27,5 +31,6 @@ struct ThingView : View {
     
     var body: some View {
         Text("Count: \(thingModel.thing.count)")
+            .onDisappear { thingModel.cancel() }
     }
 }

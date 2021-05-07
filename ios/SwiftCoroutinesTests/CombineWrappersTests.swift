@@ -12,52 +12,52 @@ import shared
 import Combine
 
 class CombineWrappersTests: XCTestCase {
-    let repository = ThingRepositoryIos(repository: ThingRepository())
+    let repository = ThingRepositoryCombine()
     
     func testFutureCall() throws {
-        let future = createFuture(suspendWrapper: repository.getThingWrapper(succeed: true))
+        let future = repository.getThing(succeed: true)
         
         let output = try await(future)
         XCTAssertEqual(output, .success([Thing(count: 0)]))
     }
 
     func testFutureNullable() throws {
-        let future = createOptionalFuture(suspendWrapper: repository.getNullableThingWrapper(succeed: true))
+        let future = repository.getOptionalThing(succeed: true)
         
         let output = try await(future)
         XCTAssertEqual(output, .success([nil]))
     }
     
     func testFutureError() throws {
-        let future = createFuture(suspendWrapper: repository.getThingWrapper(succeed: false))
+        let future = repository.getThing(succeed: false)
 
         let output = try await(future)
         XCTAssertEqual(output, .failure(items: [], error: KotlinError(KotlinThrowable(message: "oh no!"))))
     }
     
     func testPublisherCall() throws {
-        let publisher = createPublisher(flowWrapper: repository.getThingStreamWrapper(count: 3, succeed: true))
+        let publisher = repository.getThingStream(count: 3, succeed: true)
         
         let output = try await(publisher)
         XCTAssertEqual(output, .success([Thing(count: 0), Thing(count: 1), Thing(count: 2)]))
     }
 
     func testPublisherNullable() throws {
-        let publisher = createOptionalPublisher(flowWrapper: repository.getNullableThingStreamWrapper(count: 3, succeed: true))
+        let publisher = repository.getOptionalThingStream(count: 3, succeed: true)
         
         let output = try await(publisher)
         XCTAssertEqual(output, .success([Thing(count: 0), nil, Thing(count: 2)]))
     }
     
     func testPublisherError() throws {
-        let publisher = createPublisher(flowWrapper: repository.getThingStreamWrapper(count: 1, succeed: false))
+        let publisher = repository.getThingStream(count: 1, succeed: false)
         
         let output = try await(publisher)
         XCTAssertEqual(output, .failure(items: [Thing(count: 0)], error: KotlinError(KotlinThrowable(message: "oops!"))))
     }
     
     func testBackgroundFutureCall() throws {
-        let publisher = createFuture(suspendWrapper: repository.getThingWrapper(succeed: true))
+        let publisher = repository.getThing(succeed: true)
             .subscribe(on: DispatchQueue.global())
             .map { (thing) -> Thing in
                 XCTAssertFalse(Thread.isMainThread)
@@ -69,7 +69,7 @@ class CombineWrappersTests: XCTestCase {
     }
 
     func testBackgroundFutureDispose() throws {
-        let cancellable = createFuture(suspendWrapper: repository.getThingWrapper(succeed: true))
+        let cancellable = repository.getThing(succeed: true)
             .sink(receiveCompletion: { _ in }, receiveValue: { _ in })
         
         let latch = expectation(description: "background test")
@@ -85,7 +85,7 @@ class CombineWrappersTests: XCTestCase {
     }
     
     func testBackgroundPublisherCall() throws {
-        let publisher = createPublisher(flowWrapper: repository.getThingStreamWrapper(count: 3, succeed: true))
+        let publisher = repository.getThingStream(count: 3, succeed: true)
             .subscribe(on: DispatchQueue.global())
             .map { (thing) -> Thing in
                 XCTAssertFalse(Thread.isMainThread)
@@ -97,7 +97,7 @@ class CombineWrappersTests: XCTestCase {
     }
 
     func testBackgroundPublisherDispose() throws {
-        let cancellable = createPublisher(flowWrapper: repository.getThingStreamWrapper(count: 3, succeed: true))
+        let cancellable = repository.getThingStream(count: 3, succeed: true)
             .sink(receiveCompletion: { _ in }, receiveValue: { _ in })
         
         let latch = expectation(description: "background test")
@@ -113,19 +113,19 @@ class CombineWrappersTests: XCTestCase {
     }
     
     func testBackgroundRepository() throws {
-        var backgroundRepository: ThingRepositoryIos? = nil
+        var backgroundRepository: ThingRepositoryCombine? = nil
 
         let latch = expectation(description: "background test")
         DispatchQueue.global().async {
             XCTAssertFalse(Thread.current.isMainThread)
-            backgroundRepository = ThingRepositoryIos(repository: ThingRepository())
+            backgroundRepository = ThingRepositoryCombine()
             latch.fulfill()
         }
 
         waitForExpectations(timeout: 10)
         XCTAssertNotNil(backgroundRepository)
         
-        let publisher = createPublisher(flowWrapper: repository.getThingStreamWrapper(count: 3, succeed: true))
+        let publisher = backgroundRepository!.getThingStream(count: 3, succeed: true)
         let output = try await(publisher)
         XCTAssertEqual(output, .success([Thing(count: 0), Thing(count: 1), Thing(count: 2)]))
     }
