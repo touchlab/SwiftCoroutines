@@ -1,6 +1,10 @@
 ### Swift/Coroutines interop
 
-This is the code associated with [this blog post](https://dev.to/russhwolf/kotlin-coroutines-and-swift-revisited-1i8f).
+This is the code associated
+with [this updated blog post](https://dev.to/russhwolf/kotlin-coroutines-and-swift-revisited-1i8f) on Coroutines and
+Swift interop. If you can here from
+the [first version](https://dev.to/touchlab/working-with-kotlin-coroutines-and-rxswift-24fa), you can find the original
+sample code on the [v1 branch](https://github.com/touchlab/SwiftCoroutines/tree/v1)
 
 The `shared` directory contains Kotlin code, including a `ThingRepository` in common and a wrapper `ThingRespositoryIos`
 in the ios sources, which makes use of interop utilities in `SwiftCoroutines.kt`.
