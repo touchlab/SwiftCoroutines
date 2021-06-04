@@ -11,7 +11,7 @@ class ThingRepositorySwiftCallbacks {
         succeed: Bool,
         onSuccess: @escaping (Thing) -> Void,
         onThrow: @escaping (KotlinError) -> Void
-    ) -> Kotlinx_coroutines_coreJob {
+    ) -> Canceller {
         delegate.getThingWrapper(succeed: succeed)
             .subscribe(onSuccess: onSuccess, onThrow: { error in onThrow(KotlinError(error)) })
     }
@@ -22,7 +22,7 @@ class ThingRepositorySwiftCallbacks {
         onEach: @escaping (Thing) -> Void,
         onComplete: @escaping () -> Void,
         onThrow: @escaping (KotlinError) -> Void
-    ) -> Kotlinx_coroutines_coreJob {
+    ) -> Canceller {
         delegate.getThingStreamWrapper(count: count, succeed: succeed)
             .subscribe(onEach: onEach, onComplete: onComplete, onThrow: { error in onThrow(KotlinError(error)) })
     }
@@ -31,7 +31,7 @@ class ThingRepositorySwiftCallbacks {
         succeed: Bool,
         onSuccess: @escaping (Thing?) -> Void,
         onThrow: @escaping (KotlinError) -> Void
-    ) -> Kotlinx_coroutines_coreJob {
+    ) -> Canceller {
         delegate.getNullableThingWrapper(succeed: succeed)
             .subscribe(onSuccess: onSuccess, onThrow: { error in onThrow(KotlinError(error)) })
     }
@@ -42,12 +42,12 @@ class ThingRepositorySwiftCallbacks {
         onEach: @escaping (Thing?) -> Void,
         onComplete: @escaping () -> Void,
         onThrow: @escaping (KotlinError) -> Void
-    ) -> Kotlinx_coroutines_coreJob {
+    ) -> Canceller {
         delegate.getNullableThingStreamWrapper(count: count, succeed: succeed)
             .subscribe(onEach: onEach, onComplete: onComplete, onThrow: { error in onThrow(KotlinError(error)) })
     }
     
     deinit {
-        self.delegate.dispose()
+        self.delegate.cancel()
     }
 }

@@ -11,8 +11,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 46EB2E00002F10 /* Build configuration list for PBXAggregateTarget "shared" */;
 			buildPhases = (
-				46EB2E00003270 /* [CP-User] Build shared */,
-				46EB2E00003260 /* [CP] Copy dSYMs */,
+				46EB2E00003250 /* [CP-User] Build shared */,
 			);
 			dependencies = (
 			);
@@ -350,120 +349,120 @@
 		46EB2E00002E50 /* RecursiveLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000014B0 /* RecursiveLock.swift */; };
 		46EB2E00002EB0 /* RxTest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E00002EA0 /* RxTest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		46EB2E00002EF0 /* RxTest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00002EE0 /* RxTest-dummy.m */; };
-		46EB2E00002F90 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E00002F80 /* XCTest.framework */; };
-		46EB2E00003030 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000015A0 /* Foundation.framework */; };
-		46EB2E000030A0 /* Pods-SwiftCoroutines-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E00003090 /* Pods-SwiftCoroutines-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46EB2E000030F0 /* Pods-SwiftCoroutines-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000030E0 /* Pods-SwiftCoroutines-dummy.m */; };
-		46EB2E00003190 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000015A0 /* Foundation.framework */; };
-		46EB2E00003200 /* Pods-SwiftCoroutinesTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E000031F0 /* Pods-SwiftCoroutinesTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46EB2E00003250 /* Pods-SwiftCoroutinesTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00003240 /* Pods-SwiftCoroutinesTests-dummy.m */; };
-		46EB2E000033F0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000033E0 /* RxSwift.framework */; };
-		46EB2E00003420 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000033E0 /* RxSwift.framework */; };
-		46EB2E00003460 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E00003450 /* RxRelay.framework */; };
-		46EB2E00003490 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000033E0 /* RxSwift.framework */; };
-		46EB2E000034C0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000033E0 /* RxSwift.framework */; };
+		46EB2E00002F80 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E00002F70 /* XCTest.framework */; };
+		46EB2E00003020 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000015A0 /* Foundation.framework */; };
+		46EB2E00003090 /* Pods-SwiftCoroutines-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E00003080 /* Pods-SwiftCoroutines-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB2E000030E0 /* Pods-SwiftCoroutines-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000030D0 /* Pods-SwiftCoroutines-dummy.m */; };
+		46EB2E00003180 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000015A0 /* Foundation.framework */; };
+		46EB2E000031F0 /* Pods-SwiftCoroutinesTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E000031E0 /* Pods-SwiftCoroutinesTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB2E00003240 /* Pods-SwiftCoroutinesTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00003230 /* Pods-SwiftCoroutinesTests-dummy.m */; };
+		46EB2E000033D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000033C0 /* RxSwift.framework */; };
+		46EB2E00003400 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000033C0 /* RxSwift.framework */; };
+		46EB2E00003440 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E00003430 /* RxRelay.framework */; };
+		46EB2E00003470 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000033C0 /* RxSwift.framework */; };
+		46EB2E000034A0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000033C0 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		46EB2E00003280 /* PBXContainerItemProxy */ = {
+		46EB2E00003260 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7AD0C6DCDC9CEC8A3C7C10C7FEE07BE6;
 			remoteInfo = RxCocoa;
+		};
+		46EB2E00003280 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4622BFEF3DC16E8BD15EEFC30D4D0084;
+			remoteInfo = RxRelay;
 		};
 		46EB2E000032A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4622BFEF3DC16E8BD15EEFC30D4D0084;
-			remoteInfo = RxRelay;
-		};
-		46EB2E000032C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000000 /* Project object */;
-			proxyType = 1;
 			remoteGlobalIDString = EA9EA43B3B503823EE36C60D9C8A865F;
 			remoteInfo = RxSwift;
 		};
-		46EB2E000032E0 /* PBXContainerItemProxy */ = {
+		46EB2E000032C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8777C9F6889E59EFFD631D80AEE9048B;
 			remoteInfo = shared;
 		};
-		46EB2E00003300 /* PBXContainerItemProxy */ = {
+		46EB2E000032E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7AD0C6DCDC9CEC8A3C7C10C7FEE07BE6;
 			remoteInfo = RxCocoa;
 		};
-		46EB2E00003320 /* PBXContainerItemProxy */ = {
+		46EB2E00003300 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4622BFEF3DC16E8BD15EEFC30D4D0084;
 			remoteInfo = RxRelay;
 		};
-		46EB2E00003340 /* PBXContainerItemProxy */ = {
+		46EB2E00003320 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EA9EA43B3B503823EE36C60D9C8A865F;
 			remoteInfo = RxSwift;
 		};
-		46EB2E00003360 /* PBXContainerItemProxy */ = {
+		46EB2E00003340 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8777C9F6889E59EFFD631D80AEE9048B;
 			remoteInfo = shared;
 		};
-		46EB2E00003380 /* PBXContainerItemProxy */ = {
+		46EB2E00003360 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F243B36381C0CE83CCFF789AC38F0D36;
 			remoteInfo = RxBlocking;
 		};
-		46EB2E000033A0 /* PBXContainerItemProxy */ = {
+		46EB2E00003380 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C8D93C508E21FFD4EE60D335DD6C22E3;
 			remoteInfo = RxTest;
 		};
-		46EB2E000033C0 /* PBXContainerItemProxy */ = {
+		46EB2E000033A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EA9EA43B3B503823EE36C60D9C8A865F;
 			remoteInfo = RxSwift;
 		};
-		46EB2E00003400 /* PBXContainerItemProxy */ = {
+		46EB2E000033E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EA9EA43B3B503823EE36C60D9C8A865F;
 			remoteInfo = RxSwift;
 		};
-		46EB2E00003430 /* PBXContainerItemProxy */ = {
+		46EB2E00003410 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4622BFEF3DC16E8BD15EEFC30D4D0084;
 			remoteInfo = RxRelay;
 		};
-		46EB2E00003470 /* PBXContainerItemProxy */ = {
+		46EB2E00003450 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EA9EA43B3B503823EE36C60D9C8A865F;
 			remoteInfo = RxSwift;
 		};
-		46EB2E000034A0 /* PBXContainerItemProxy */ = {
+		46EB2E00003480 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
@@ -829,30 +828,29 @@
 		46EB2E00002EC0 /* RxTest-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxTest-Info.plist"; sourceTree = "<group>"; };
 		46EB2E00002ED0 /* RxTest-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxTest-prefix.pch"; sourceTree = "<group>"; };
 		46EB2E00002EE0 /* RxTest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxTest-dummy.m"; sourceTree = "<group>"; };
-		46EB2E00002F50 /* shared-copy-dsyms.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "shared-copy-dsyms.sh"; sourceTree = "<group>"; };
-		46EB2E00002F60 /* shared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = shared.debug.xcconfig; sourceTree = "<group>"; };
-		46EB2E00002F70 /* shared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = shared.release.xcconfig; sourceTree = "<group>"; };
-		46EB2E00002F80 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		46EB2E00003050 /* Pods-SwiftCoroutines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftCoroutines.release.xcconfig"; sourceTree = "<group>"; };
-		46EB2E00003060 /* Pods-SwiftCoroutines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftCoroutines.debug.xcconfig"; sourceTree = "<group>"; };
-		46EB2E00003070 /* Pods-SwiftCoroutines-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoroutines-Info.plist"; sourceTree = "<group>"; };
-		46EB2E00003080 /* Pods-SwiftCoroutines.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftCoroutines.modulemap"; sourceTree = "<group>"; };
-		46EB2E00003090 /* Pods-SwiftCoroutines-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoroutines-umbrella.h"; sourceTree = "<group>"; };
-		46EB2E000030B0 /* Pods-SwiftCoroutines-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftCoroutines-frameworks.sh"; sourceTree = "<group>"; };
-		46EB2E000030C0 /* Pods-SwiftCoroutines-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoroutines-acknowledgements.plist"; sourceTree = "<group>"; };
-		46EB2E000030D0 /* Pods-SwiftCoroutines-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftCoroutines-acknowledgements.markdown"; sourceTree = "<group>"; };
-		46EB2E000030E0 /* Pods-SwiftCoroutines-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftCoroutines-dummy.m"; sourceTree = "<group>"; };
-		46EB2E000031B0 /* Pods-SwiftCoroutinesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftCoroutinesTests.release.xcconfig"; sourceTree = "<group>"; };
-		46EB2E000031C0 /* Pods-SwiftCoroutinesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftCoroutinesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		46EB2E000031D0 /* Pods-SwiftCoroutinesTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoroutinesTests-Info.plist"; sourceTree = "<group>"; };
-		46EB2E000031E0 /* Pods-SwiftCoroutinesTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftCoroutinesTests.modulemap"; sourceTree = "<group>"; };
-		46EB2E000031F0 /* Pods-SwiftCoroutinesTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoroutinesTests-umbrella.h"; sourceTree = "<group>"; };
-		46EB2E00003210 /* Pods-SwiftCoroutinesTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftCoroutinesTests-frameworks.sh"; sourceTree = "<group>"; };
-		46EB2E00003220 /* Pods-SwiftCoroutinesTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoroutinesTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		46EB2E00003230 /* Pods-SwiftCoroutinesTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftCoroutinesTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		46EB2E00003240 /* Pods-SwiftCoroutinesTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftCoroutinesTests-dummy.m"; sourceTree = "<group>"; };
-		46EB2E000033E0 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		46EB2E00003450 /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46EB2E00002F50 /* shared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = shared.debug.xcconfig; sourceTree = "<group>"; };
+		46EB2E00002F60 /* shared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = shared.release.xcconfig; sourceTree = "<group>"; };
+		46EB2E00002F70 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		46EB2E00003040 /* Pods-SwiftCoroutines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftCoroutines.release.xcconfig"; sourceTree = "<group>"; };
+		46EB2E00003050 /* Pods-SwiftCoroutines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftCoroutines.debug.xcconfig"; sourceTree = "<group>"; };
+		46EB2E00003060 /* Pods-SwiftCoroutines-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoroutines-Info.plist"; sourceTree = "<group>"; };
+		46EB2E00003070 /* Pods-SwiftCoroutines.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftCoroutines.modulemap"; sourceTree = "<group>"; };
+		46EB2E00003080 /* Pods-SwiftCoroutines-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoroutines-umbrella.h"; sourceTree = "<group>"; };
+		46EB2E000030A0 /* Pods-SwiftCoroutines-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftCoroutines-frameworks.sh"; sourceTree = "<group>"; };
+		46EB2E000030B0 /* Pods-SwiftCoroutines-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoroutines-acknowledgements.plist"; sourceTree = "<group>"; };
+		46EB2E000030C0 /* Pods-SwiftCoroutines-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftCoroutines-acknowledgements.markdown"; sourceTree = "<group>"; };
+		46EB2E000030D0 /* Pods-SwiftCoroutines-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftCoroutines-dummy.m"; sourceTree = "<group>"; };
+		46EB2E000031A0 /* Pods-SwiftCoroutinesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftCoroutinesTests.release.xcconfig"; sourceTree = "<group>"; };
+		46EB2E000031B0 /* Pods-SwiftCoroutinesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftCoroutinesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		46EB2E000031C0 /* Pods-SwiftCoroutinesTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoroutinesTests-Info.plist"; sourceTree = "<group>"; };
+		46EB2E000031D0 /* Pods-SwiftCoroutinesTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftCoroutinesTests.modulemap"; sourceTree = "<group>"; };
+		46EB2E000031E0 /* Pods-SwiftCoroutinesTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoroutinesTests-umbrella.h"; sourceTree = "<group>"; };
+		46EB2E00003200 /* Pods-SwiftCoroutinesTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftCoroutinesTests-frameworks.sh"; sourceTree = "<group>"; };
+		46EB2E00003210 /* Pods-SwiftCoroutinesTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoroutinesTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		46EB2E00003220 /* Pods-SwiftCoroutinesTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftCoroutinesTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		46EB2E00003230 /* Pods-SwiftCoroutinesTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftCoroutinesTests-dummy.m"; sourceTree = "<group>"; };
+		46EB2E000033C0 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46EB2E00003430 /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		809C5FAB588354C9BA37DC3EAB8CB45C /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxSwift.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78AE4B64CE2672AB2AA6FB2ABDCD002 /* Pods_SwiftCoroutines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftCoroutines.framework; path = "Pods-SwiftCoroutines.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC432FD48A5932251F1CAFBC4BF74894 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxCocoa.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -865,7 +863,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46EB2E000015B0 /* Foundation.framework in Frameworks */,
-				46EB2E000033F0 /* RxSwift.framework in Frameworks */,
+				46EB2E000033D0 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,8 +872,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				46EB2E000017D0 /* Foundation.framework in Frameworks */,
-				46EB2E00003460 /* RxRelay.framework in Frameworks */,
-				46EB2E00003420 /* RxSwift.framework in Frameworks */,
+				46EB2E00003440 /* RxRelay.framework in Frameworks */,
+				46EB2E00003400 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -884,7 +882,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46EB2E000020C0 /* Foundation.framework in Frameworks */,
-				46EB2E00003490 /* RxSwift.framework in Frameworks */,
+				46EB2E00003470 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,24 +899,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				46EB2E00002CE0 /* Foundation.framework in Frameworks */,
-				46EB2E000034C0 /* RxSwift.framework in Frameworks */,
-				46EB2E00002F90 /* XCTest.framework in Frameworks */,
+				46EB2E000034A0 /* RxSwift.framework in Frameworks */,
+				46EB2E00002F80 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46EB2E00003010 /* Frameworks */ = {
+		46EB2E00003000 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46EB2E00003030 /* Foundation.framework in Frameworks */,
+				46EB2E00003020 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46EB2E00003170 /* Frameworks */ = {
+		46EB2E00003160 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46EB2E00003190 /* Foundation.framework in Frameworks */,
+				46EB2E00003180 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -954,8 +952,8 @@
 		46EB2E00000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				46EB2E00003450 /* RxRelay.framework */,
-				46EB2E000033E0 /* RxSwift.framework */,
+				46EB2E00003430 /* RxRelay.framework */,
+				46EB2E000033C0 /* RxSwift.framework */,
 				46EB2E00001590 /* iOS */,
 			);
 			name = Frameworks;
@@ -964,8 +962,8 @@
 		46EB2E00000070 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				46EB2E00003040 /* Pods-SwiftCoroutines */,
-				46EB2E000031A0 /* Pods-SwiftCoroutinesTests */,
+				46EB2E00003030 /* Pods-SwiftCoroutines */,
+				46EB2E00003190 /* Pods-SwiftCoroutinesTests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -1380,7 +1378,7 @@
 			isa = PBXGroup;
 			children = (
 				46EB2E000015A0 /* Foundation.framework */,
-				46EB2E00002F80 /* XCTest.framework */,
+				46EB2E00002F70 /* XCTest.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -1463,43 +1461,42 @@
 		46EB2E00002F40 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				46EB2E00002F50 /* shared-copy-dsyms.sh */,
-				46EB2E00002F60 /* shared.debug.xcconfig */,
-				46EB2E00002F70 /* shared.release.xcconfig */,
+				46EB2E00002F50 /* shared.debug.xcconfig */,
+				46EB2E00002F60 /* shared.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../ios/Pods/Target Support Files/shared";
 			sourceTree = "<group>";
 		};
-		46EB2E00003040 /* Pods-SwiftCoroutines */ = {
+		46EB2E00003030 /* Pods-SwiftCoroutines */ = {
 			isa = PBXGroup;
 			children = (
-				46EB2E00003080 /* Pods-SwiftCoroutines.modulemap */,
-				46EB2E000030D0 /* Pods-SwiftCoroutines-acknowledgements.markdown */,
-				46EB2E000030C0 /* Pods-SwiftCoroutines-acknowledgements.plist */,
-				46EB2E000030E0 /* Pods-SwiftCoroutines-dummy.m */,
-				46EB2E000030B0 /* Pods-SwiftCoroutines-frameworks.sh */,
-				46EB2E00003070 /* Pods-SwiftCoroutines-Info.plist */,
-				46EB2E00003090 /* Pods-SwiftCoroutines-umbrella.h */,
-				46EB2E00003060 /* Pods-SwiftCoroutines.debug.xcconfig */,
-				46EB2E00003050 /* Pods-SwiftCoroutines.release.xcconfig */,
+				46EB2E00003070 /* Pods-SwiftCoroutines.modulemap */,
+				46EB2E000030C0 /* Pods-SwiftCoroutines-acknowledgements.markdown */,
+				46EB2E000030B0 /* Pods-SwiftCoroutines-acknowledgements.plist */,
+				46EB2E000030D0 /* Pods-SwiftCoroutines-dummy.m */,
+				46EB2E000030A0 /* Pods-SwiftCoroutines-frameworks.sh */,
+				46EB2E00003060 /* Pods-SwiftCoroutines-Info.plist */,
+				46EB2E00003080 /* Pods-SwiftCoroutines-umbrella.h */,
+				46EB2E00003050 /* Pods-SwiftCoroutines.debug.xcconfig */,
+				46EB2E00003040 /* Pods-SwiftCoroutines.release.xcconfig */,
 			);
 			name = "Pods-SwiftCoroutines";
 			path = "Target Support Files/Pods-SwiftCoroutines";
 			sourceTree = "<group>";
 		};
-		46EB2E000031A0 /* Pods-SwiftCoroutinesTests */ = {
+		46EB2E00003190 /* Pods-SwiftCoroutinesTests */ = {
 			isa = PBXGroup;
 			children = (
-				46EB2E000031E0 /* Pods-SwiftCoroutinesTests.modulemap */,
-				46EB2E00003230 /* Pods-SwiftCoroutinesTests-acknowledgements.markdown */,
-				46EB2E00003220 /* Pods-SwiftCoroutinesTests-acknowledgements.plist */,
-				46EB2E00003240 /* Pods-SwiftCoroutinesTests-dummy.m */,
-				46EB2E00003210 /* Pods-SwiftCoroutinesTests-frameworks.sh */,
-				46EB2E000031D0 /* Pods-SwiftCoroutinesTests-Info.plist */,
-				46EB2E000031F0 /* Pods-SwiftCoroutinesTests-umbrella.h */,
-				46EB2E000031C0 /* Pods-SwiftCoroutinesTests.debug.xcconfig */,
-				46EB2E000031B0 /* Pods-SwiftCoroutinesTests.release.xcconfig */,
+				46EB2E000031D0 /* Pods-SwiftCoroutinesTests.modulemap */,
+				46EB2E00003220 /* Pods-SwiftCoroutinesTests-acknowledgements.markdown */,
+				46EB2E00003210 /* Pods-SwiftCoroutinesTests-acknowledgements.plist */,
+				46EB2E00003230 /* Pods-SwiftCoroutinesTests-dummy.m */,
+				46EB2E00003200 /* Pods-SwiftCoroutinesTests-frameworks.sh */,
+				46EB2E000031C0 /* Pods-SwiftCoroutinesTests-Info.plist */,
+				46EB2E000031E0 /* Pods-SwiftCoroutinesTests-umbrella.h */,
+				46EB2E000031B0 /* Pods-SwiftCoroutinesTests.debug.xcconfig */,
+				46EB2E000031A0 /* Pods-SwiftCoroutinesTests.release.xcconfig */,
 			);
 			name = "Pods-SwiftCoroutinesTests";
 			path = "Target Support Files/Pods-SwiftCoroutinesTests";
@@ -1554,19 +1551,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46EB2E00002FF0 /* Headers */ = {
+		46EB2E00002FE0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46EB2E000030A0 /* Pods-SwiftCoroutines-umbrella.h in Headers */,
+				46EB2E00003090 /* Pods-SwiftCoroutines-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46EB2E00003150 /* Headers */ = {
+		46EB2E00003140 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46EB2E00003200 /* Pods-SwiftCoroutinesTests-umbrella.h in Headers */,
+				46EB2E000031F0 /* Pods-SwiftCoroutinesTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1575,20 +1572,20 @@
 /* Begin PBXNativeTarget section */
 		398E8F54D483E7B44878A3BB9DD05031 /* Pods-SwiftCoroutines */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46EB2E00002FB0 /* Build configuration list for PBXNativeTarget "Pods-SwiftCoroutines" */;
+			buildConfigurationList = 46EB2E00002FA0 /* Build configuration list for PBXNativeTarget "Pods-SwiftCoroutines" */;
 			buildPhases = (
-				46EB2E00002FF0 /* Headers */,
-				46EB2E00003000 /* Sources */,
-				46EB2E00003010 /* Frameworks */,
-				46EB2E00003020 /* Resources */,
+				46EB2E00002FE0 /* Headers */,
+				46EB2E00002FF0 /* Sources */,
+				46EB2E00003000 /* Frameworks */,
+				46EB2E00003010 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				46EB2E00003270 /* PBXTargetDependency */,
 				46EB2E00003290 /* PBXTargetDependency */,
 				46EB2E000032B0 /* PBXTargetDependency */,
 				46EB2E000032D0 /* PBXTargetDependency */,
-				46EB2E000032F0 /* PBXTargetDependency */,
 			);
 			name = "Pods-SwiftCoroutines";
 			productName = "Pods-SwiftCoroutines";
@@ -1607,7 +1604,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00003480 /* PBXTargetDependency */,
+				46EB2E00003460 /* PBXTargetDependency */,
 			);
 			name = RxRelay;
 			productName = RxRelay;
@@ -1626,8 +1623,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00003440 /* PBXTargetDependency */,
-				46EB2E00003410 /* PBXTargetDependency */,
+				46EB2E00003420 /* PBXTargetDependency */,
+				46EB2E000033F0 /* PBXTargetDependency */,
 			);
 			name = RxCocoa;
 			productName = RxCocoa;
@@ -1636,22 +1633,22 @@
 		};
 		894F1E93FD58AB12CDBA447C7B3D7CB1 /* Pods-SwiftCoroutinesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46EB2E00003110 /* Build configuration list for PBXNativeTarget "Pods-SwiftCoroutinesTests" */;
+			buildConfigurationList = 46EB2E00003100 /* Build configuration list for PBXNativeTarget "Pods-SwiftCoroutinesTests" */;
 			buildPhases = (
-				46EB2E00003150 /* Headers */,
-				46EB2E00003160 /* Sources */,
-				46EB2E00003170 /* Frameworks */,
-				46EB2E00003180 /* Resources */,
+				46EB2E00003140 /* Headers */,
+				46EB2E00003150 /* Sources */,
+				46EB2E00003160 /* Frameworks */,
+				46EB2E00003170 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00003390 /* PBXTargetDependency */,
+				46EB2E00003370 /* PBXTargetDependency */,
+				46EB2E000032F0 /* PBXTargetDependency */,
 				46EB2E00003310 /* PBXTargetDependency */,
 				46EB2E00003330 /* PBXTargetDependency */,
+				46EB2E00003390 /* PBXTargetDependency */,
 				46EB2E00003350 /* PBXTargetDependency */,
-				46EB2E000033B0 /* PBXTargetDependency */,
-				46EB2E00003370 /* PBXTargetDependency */,
 			);
 			name = "Pods-SwiftCoroutinesTests";
 			productName = "Pods-SwiftCoroutinesTests";
@@ -1670,7 +1667,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E000034B0 /* PBXTargetDependency */,
+				46EB2E00003490 /* PBXTargetDependency */,
 			);
 			name = RxTest;
 			productName = RxTest;
@@ -1707,7 +1704,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E000033D0 /* PBXTargetDependency */,
+				46EB2E000033B0 /* PBXTargetDependency */,
 			);
 			name = RxBlocking;
 			productName = RxBlocking;
@@ -1784,14 +1781,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46EB2E00003020 /* Resources */ = {
+		46EB2E00003010 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46EB2E00003180 /* Resources */ = {
+		46EB2E00003170 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1801,24 +1798,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		46EB2E00003260 /* [CP] Copy dSYMs */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/shared/shared-copy-dsyms-input-files.xcfilelist",
-			);
-			name = "[CP] Copy dSYMs";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/shared/shared-copy-dsyms-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/shared/shared-copy-dsyms.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		46EB2E00003270 /* [CP-User] Build shared */ = {
+		46EB2E00003250 /* [CP-User] Build shared */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1826,7 +1806,7 @@
 			name = "[CP-User] Build shared";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "                set -ev\n                REPO_ROOT=\"$PODS_TARGET_SRCROOT\"\n                \"$REPO_ROOT/../gradlew\" -p \"$REPO_ROOT\" :shared:syncFramework                     -Pkotlin.native.cocoapods.target=$KOTLIN_TARGET                     -Pkotlin.native.cocoapods.configuration=$CONFIGURATION                     -Pkotlin.native.cocoapods.cflags=\"$OTHER_CFLAGS\"                     -Pkotlin.native.cocoapods.paths.headers=\"$HEADER_SEARCH_PATHS\"                     -Pkotlin.native.cocoapods.paths.frameworks=\"$FRAMEWORK_SEARCH_PATHS\"\n";
+			shellScript = "                if [ \"YES\" = \"$COCOAPODS_SKIP_KOTLIN_BUILD\" ]; then\n                  echo \"Skipping Gradle build task invocation due to COCOAPODS_SKIP_KOTLIN_BUILD environment variable set to \"YES\"\"\n                  exit 0\n                fi\n                set -ev\n                REPO_ROOT=\"$PODS_TARGET_SRCROOT\"\n                \"$REPO_ROOT/../gradlew\" -p \"$REPO_ROOT\" $KOTLIN_PROJECT_PATH:syncFramework                     -Pkotlin.native.cocoapods.platform=$PLATFORM_NAME                     -Pkotlin.native.cocoapods.archs=\"$ARCHS\"                     -Pkotlin.native.cocoapods.configuration=$CONFIGURATION                     -Pkotlin.native.cocoapods.cflags=\"$OTHER_CFLAGS\"                     -Pkotlin.native.cocoapods.paths.headers=\"$HEADER_SEARCH_PATHS\"                     -Pkotlin.native.cocoapods.paths.frameworks=\"$FRAMEWORK_SEARCH_PATHS\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2179,114 +2159,114 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46EB2E00003000 /* Sources */ = {
+		46EB2E00002FF0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46EB2E000030F0 /* Pods-SwiftCoroutines-dummy.m in Sources */,
+				46EB2E000030E0 /* Pods-SwiftCoroutines-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46EB2E00003160 /* Sources */ = {
+		46EB2E00003150 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46EB2E00003250 /* Pods-SwiftCoroutinesTests-dummy.m in Sources */,
+				46EB2E00003240 /* Pods-SwiftCoroutinesTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		46EB2E00003290 /* PBXTargetDependency */ = {
+		46EB2E00003270 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxCocoa;
 			target = 7AD0C6DCDC9CEC8A3C7C10C7FEE07BE6 /* RxCocoa */;
+			targetProxy = 46EB2E00003260 /* PBXContainerItemProxy */;
+		};
+		46EB2E00003290 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxRelay;
+			target = 4622BFEF3DC16E8BD15EEFC30D4D0084 /* RxRelay */;
 			targetProxy = 46EB2E00003280 /* PBXContainerItemProxy */;
 		};
 		46EB2E000032B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxRelay;
-			target = 4622BFEF3DC16E8BD15EEFC30D4D0084 /* RxRelay */;
+			name = RxSwift;
+			target = EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */;
 			targetProxy = 46EB2E000032A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000032D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
-			target = EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */;
+			name = shared;
+			target = 8777C9F6889E59EFFD631D80AEE9048B /* shared */;
 			targetProxy = 46EB2E000032C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000032F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = shared;
-			target = 8777C9F6889E59EFFD631D80AEE9048B /* shared */;
+			name = RxCocoa;
+			target = 7AD0C6DCDC9CEC8A3C7C10C7FEE07BE6 /* RxCocoa */;
 			targetProxy = 46EB2E000032E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00003310 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
-			target = 7AD0C6DCDC9CEC8A3C7C10C7FEE07BE6 /* RxCocoa */;
+			name = RxRelay;
+			target = 4622BFEF3DC16E8BD15EEFC30D4D0084 /* RxRelay */;
 			targetProxy = 46EB2E00003300 /* PBXContainerItemProxy */;
 		};
 		46EB2E00003330 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxRelay;
-			target = 4622BFEF3DC16E8BD15EEFC30D4D0084 /* RxRelay */;
+			name = RxSwift;
+			target = EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */;
 			targetProxy = 46EB2E00003320 /* PBXContainerItemProxy */;
 		};
 		46EB2E00003350 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
-			target = EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */;
+			name = shared;
+			target = 8777C9F6889E59EFFD631D80AEE9048B /* shared */;
 			targetProxy = 46EB2E00003340 /* PBXContainerItemProxy */;
 		};
 		46EB2E00003370 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = shared;
-			target = 8777C9F6889E59EFFD631D80AEE9048B /* shared */;
+			name = RxBlocking;
+			target = F243B36381C0CE83CCFF789AC38F0D36 /* RxBlocking */;
 			targetProxy = 46EB2E00003360 /* PBXContainerItemProxy */;
 		};
 		46EB2E00003390 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxBlocking;
-			target = F243B36381C0CE83CCFF789AC38F0D36 /* RxBlocking */;
+			name = RxTest;
+			target = C8D93C508E21FFD4EE60D335DD6C22E3 /* RxTest */;
 			targetProxy = 46EB2E00003380 /* PBXContainerItemProxy */;
 		};
 		46EB2E000033B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxTest;
-			target = C8D93C508E21FFD4EE60D335DD6C22E3 /* RxTest */;
+			name = RxSwift;
+			target = EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */;
 			targetProxy = 46EB2E000033A0 /* PBXContainerItemProxy */;
 		};
-		46EB2E000033D0 /* PBXTargetDependency */ = {
+		46EB2E000033F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxSwift;
 			target = EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */;
-			targetProxy = 46EB2E000033C0 /* PBXContainerItemProxy */;
+			targetProxy = 46EB2E000033E0 /* PBXContainerItemProxy */;
 		};
-		46EB2E00003410 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxSwift;
-			target = EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */;
-			targetProxy = 46EB2E00003400 /* PBXContainerItemProxy */;
-		};
-		46EB2E00003440 /* PBXTargetDependency */ = {
+		46EB2E00003420 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxRelay;
 			target = 4622BFEF3DC16E8BD15EEFC30D4D0084 /* RxRelay */;
-			targetProxy = 46EB2E00003430 /* PBXContainerItemProxy */;
+			targetProxy = 46EB2E00003410 /* PBXContainerItemProxy */;
 		};
-		46EB2E00003480 /* PBXTargetDependency */ = {
+		46EB2E00003460 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxSwift;
 			target = EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */;
-			targetProxy = 46EB2E00003470 /* PBXContainerItemProxy */;
+			targetProxy = 46EB2E00003450 /* PBXContainerItemProxy */;
 		};
-		46EB2E000034B0 /* PBXTargetDependency */ = {
+		46EB2E00003490 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxSwift;
 			target = EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */;
-			targetProxy = 46EB2E000034A0 /* PBXContainerItemProxy */;
+			targetProxy = 46EB2E00003480 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2344,7 +2324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2407,7 +2387,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2766,7 +2746,7 @@
 		};
 		46EB2E00002F20 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00002F70 /* shared.release.xcconfig */;
+			baseConfigurationReference = 46EB2E00002F60 /* shared.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2783,7 +2763,7 @@
 		};
 		46EB2E00002F30 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00002F60 /* shared.debug.xcconfig */;
+			baseConfigurationReference = 46EB2E00002F50 /* shared.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2797,9 +2777,9 @@
 			};
 			name = Debug;
 		};
-		46EB2E00002FC0 /* Release */ = {
+		46EB2E00002FB0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00003050 /* Pods-SwiftCoroutines.release.xcconfig */;
+			baseConfigurationReference = 46EB2E00003040 /* Pods-SwiftCoroutines.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2813,7 +2793,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SwiftCoroutines/Pods-SwiftCoroutines-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2835,9 +2815,9 @@
 			};
 			name = Release;
 		};
-		46EB2E00002FD0 /* Debug */ = {
+		46EB2E00002FC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00003060 /* Pods-SwiftCoroutines.debug.xcconfig */;
+			baseConfigurationReference = 46EB2E00003050 /* Pods-SwiftCoroutines.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2851,7 +2831,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SwiftCoroutines/Pods-SwiftCoroutines-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2872,9 +2852,9 @@
 			};
 			name = Debug;
 		};
-		46EB2E00003120 /* Release */ = {
+		46EB2E00003110 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E000031B0 /* Pods-SwiftCoroutinesTests.release.xcconfig */;
+			baseConfigurationReference = 46EB2E000031A0 /* Pods-SwiftCoroutinesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2888,7 +2868,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SwiftCoroutinesTests/Pods-SwiftCoroutinesTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2910,9 +2890,9 @@
 			};
 			name = Release;
 		};
-		46EB2E00003130 /* Debug */ = {
+		46EB2E00003120 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E000031C0 /* Pods-SwiftCoroutinesTests.debug.xcconfig */;
+			baseConfigurationReference = 46EB2E000031B0 /* Pods-SwiftCoroutinesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2926,7 +2906,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SwiftCoroutinesTests/Pods-SwiftCoroutinesTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3013,20 +2993,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46EB2E00002FB0 /* Build configuration list for PBXNativeTarget "Pods-SwiftCoroutines" */ = {
+		46EB2E00002FA0 /* Build configuration list for PBXNativeTarget "Pods-SwiftCoroutines" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				46EB2E00002FD0 /* Debug */,
-				46EB2E00002FC0 /* Release */,
+				46EB2E00002FC0 /* Debug */,
+				46EB2E00002FB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46EB2E00003110 /* Build configuration list for PBXNativeTarget "Pods-SwiftCoroutinesTests" */ = {
+		46EB2E00003100 /* Build configuration list for PBXNativeTarget "Pods-SwiftCoroutinesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				46EB2E00003130 /* Debug */,
-				46EB2E00003120 /* Release */,
+				46EB2E00003120 /* Debug */,
+				46EB2E00003110 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

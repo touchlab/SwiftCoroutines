@@ -37,6 +37,6 @@ class ThingRepositoryCombine {
     }
     
     deinit {
-        delegate.dispose()
+        delegate.cancel()
     }
 }

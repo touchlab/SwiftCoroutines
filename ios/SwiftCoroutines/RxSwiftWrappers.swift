@@ -10,45 +10,45 @@ import Foundation
 import RxSwift
 import shared
 
-func createSingle<T>(suspendWrapper: SuspendWrapper<T>) -> Single<T> {
+func createSingle<T>(suspendWrapper: SuspendAdapter<T>) -> Single<T> {
     return Single<T>.create { single in
-        let job: Kotlinx_coroutines_coreJob = suspendWrapper.subscribe(
+        let cancellable = suspendWrapper.subscribe(
             onSuccess: { item in single(.success(item)) },
             onThrow: { error in single(.error(KotlinError(error))) }
         )
-        return Disposables.create { job.cancel(cause: nil) }
+        return Disposables.create { cancellable.cancel() }
     }
 }
 
-func createObservable<T>(flowWrapper: FlowWrapper<T>) -> Observable<T> {
+func createObservable<T>(flowWrapper: FlowAdapter<T>) -> Observable<T> {
     return Observable<T>.create { observer in
-        let job: Kotlinx_coroutines_coreJob = flowWrapper.subscribe(
+        let cancellable = flowWrapper.subscribe(
             onEach: { item in observer.on(.next(item)) },
             onComplete: { observer.on(.completed) },
             onThrow: { error in observer.on(.error(KotlinError(error))) }
         )
-        return Disposables.create { job.cancel(cause: nil) }
+        return Disposables.create { cancellable.cancel() }
     }
 }
 
-func createOptionalSingle<T>(suspendWrapper: NullableSuspendWrapper<T>) -> Single<T?> {
+func createOptionalSingle<T>(suspendWrapper: NullableSuspendAdapter<T>) -> Single<T?> {
     return Single<T?>.create { single in
-        let job: Kotlinx_coroutines_coreJob = suspendWrapper.subscribe(
+        let cancellable = suspendWrapper.subscribe(
             onSuccess: { item in single(.success(item)) },
             onThrow: { error in single(.error(KotlinError(error))) }
         )
-        return Disposables.create { job.cancel(cause: nil) }
+        return Disposables.create { cancellable.cancel() }
     }
 }
 
-func createOptionalObservable<T>(flowWrapper: NullableFlowWrapper<T>) -> Observable<T?> {
+func createOptionalObservable<T>(flowWrapper: NullableFlowAdapter<T>) -> Observable<T?> {
     return Observable<T?>.create { observer in
-        let job: Kotlinx_coroutines_coreJob = flowWrapper.subscribe(
+        let cancellable = flowWrapper.subscribe(
             onEach: { item in observer.on(.next(item)) },
             onComplete: { observer.on(.completed) },
             onThrow: { error in observer.on(.error(KotlinError(error))) }
         )
-        return Disposables.create { job.cancel(cause: nil) }
+        return Disposables.create { cancellable.cancel() }
     }
 }
 

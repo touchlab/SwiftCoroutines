@@ -17,42 +17,42 @@ class CombineWrappersTests: XCTestCase {
     func testFutureCall() throws {
         let future = repository.getThing(succeed: true)
         
-        let output = try await(future)
+        let output = try doAwait(future)
         XCTAssertEqual(output, .success([Thing(count: 0)]))
     }
 
     func testFutureNullable() throws {
         let future = repository.getOptionalThing(succeed: true)
         
-        let output = try await(future)
+        let output = try doAwait(future)
         XCTAssertEqual(output, .success([nil]))
     }
     
     func testFutureError() throws {
         let future = repository.getThing(succeed: false)
 
-        let output = try await(future)
+        let output = try doAwait(future)
         XCTAssertEqual(output, .failure(items: [], error: KotlinError(KotlinThrowable(message: "oh no!"))))
     }
     
     func testPublisherCall() throws {
         let publisher = repository.getThingStream(count: 3, succeed: true)
         
-        let output = try await(publisher)
+        let output = try doAwait(publisher)
         XCTAssertEqual(output, .success([Thing(count: 0), Thing(count: 1), Thing(count: 2)]))
     }
 
     func testPublisherNullable() throws {
         let publisher = repository.getOptionalThingStream(count: 3, succeed: true)
         
-        let output = try await(publisher)
+        let output = try doAwait(publisher)
         XCTAssertEqual(output, .success([Thing(count: 0), nil, Thing(count: 2)]))
     }
     
     func testPublisherError() throws {
         let publisher = repository.getThingStream(count: 1, succeed: false)
         
-        let output = try await(publisher)
+        let output = try doAwait(publisher)
         XCTAssertEqual(output, .failure(items: [Thing(count: 0)], error: KotlinError(KotlinThrowable(message: "oops!"))))
     }
     
@@ -64,7 +64,7 @@ class CombineWrappersTests: XCTestCase {
                 return thing
             }
         
-        let output = try await(publisher)
+        let output = try doAwait(publisher)
         XCTAssertEqual(output, .success([Thing(count: 0)]))
     }
 
@@ -92,7 +92,7 @@ class CombineWrappersTests: XCTestCase {
                 return thing
             }
         
-        let output = try await(publisher)
+        let output = try doAwait(publisher)
         XCTAssertEqual(output, .success([Thing(count: 0), Thing(count: 1), Thing(count: 2)]))
     }
 
@@ -126,14 +126,14 @@ class CombineWrappersTests: XCTestCase {
         XCTAssertNotNil(backgroundRepository)
         
         let publisher = backgroundRepository!.getThingStream(count: 3, succeed: true)
-        let output = try await(publisher)
+        let output = try doAwait(publisher)
         XCTAssertEqual(output, .success([Thing(count: 0), Thing(count: 1), Thing(count: 2)]))
     }
 }
 
 // adapted from https://www.swiftbysundell.com/articles/unit-testing-combine-based-swift-code/
 extension XCTestCase {
-    func await<T: Publisher>(
+    func doAwait<T: Publisher>(
         _ publisher: T,
         timeout: TimeInterval = 10
     ) throws -> CombineResult<T.Output> {

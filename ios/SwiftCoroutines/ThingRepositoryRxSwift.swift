@@ -37,6 +37,6 @@ class ThingRepositoryRxSwift {
     }
     
     deinit {
-        self.delegate.dispose()
+        self.delegate.cancel()
     }
 }

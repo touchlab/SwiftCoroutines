@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.cocoapods.CocoapodsExtension
-import org.jetbrains.kotlin.gradle.plugin.mpp.Framework
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
@@ -23,7 +21,7 @@ kotlin {
 
         commonMain {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0-native-mt")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2-native-mt")
             }
         }
     }
@@ -32,14 +30,6 @@ kotlin {
         homepage = "https://touchlab.co"
         framework {
             isStatic = false
-        }
-    }
-}
-
-fun CocoapodsExtension.framework(configuration: Framework.() -> Unit) {
-    kotlin.targets.withType<KotlinNativeTarget> {
-        binaries.withType<Framework> {
-            configuration()
         }
     }
 }
