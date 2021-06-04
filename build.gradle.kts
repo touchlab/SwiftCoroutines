@@ -3,8 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath(kotlin("gradle-plugin", "1.4.31"))
-        classpath("co.touchlab:kotlinnativecocoapods:0.12")
+        classpath(kotlin("gradle-plugin", "1.5.10"))
     }
 }
 
