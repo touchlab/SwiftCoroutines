@@ -1,7 +1,7 @@
 ### Swift/Coroutines interop
 
 This is the code associated
-with [this updated blog post](https://dev.to/russhwolf/kotlin-coroutines-and-swift-revisited-1i8f) on Coroutines and
+with [this updated blog post](https://dev.to/touchlab/kotlin-coroutines-and-swift-revisited-j5h) on Coroutines and
 Swift interop. If you can here from
 the [first version](https://dev.to/touchlab/working-with-kotlin-coroutines-and-rxswift-24fa), you can find the original
 sample code on the [v1 branch](https://github.com/touchlab/SwiftCoroutines/tree/v1)
