@@ -45,37 +45,56 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
         
-        disposable = createObservable(flowWrapper: repository.getThingStreamWrapper(count: 10, succeed: true))
-            .subscribe(
-                onNext: { thing in
-                    NSLog("RxSwift next: \(thing)")
-                },
-                onError: { (error: Error) in
-                    NSLog("RxSwift error: \(error.localizedDescription)")
-                },
-                onCompleted: {
-                    NSLog("RxSwift complete!")
-                },
-                onDisposed: {
-                    NSLog("RxSwift disposed!")
-                }
-            )
+        let subject = PassthroughSubject<Thing, Error>()
+        let combineThing = CombineConsumingThing(inverseFlowAdapter: adaptForFlow(publisher: subject.eraseToAnyPublisher()))
         
-        cancellable = createPublisher(flowWrapper: repository.getThingStreamWrapper(count: 10, succeed: true))
-            .handleEvents(receiveCancel: { NSLog("Combine canceled!") })
-            .sink(
-                receiveCompletion: { completion in
-                    switch completion {
-                    case .failure(let error):
-                        NSLog("Combine error: \(error.localizedDescription)")
-                    case .finished:
-                        NSLog("Combine finished!")
-                    }
-                },
-                receiveValue: { thing in
-                    NSLog("Combine next: \(thing)")
-                }
-            )
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            subject.send(Thing(count: 3))
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            subject.send(Thing(count: 2))
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            subject.send(Thing(count: 1))
+        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+//            subject.send(completion: .failure(DumbError()))
+//        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            subject.send(completion: .finished)
+        }
+
+//        disposable = createObservable(flowWrapper: repository.getThingStreamWrapper(count: 10, succeed: true))
+//            .subscribe(
+//                onNext: { thing in
+//                    NSLog("RxSwift next: \(thing)")
+//                },
+//                onError: { (error: Error) in
+//                    NSLog("RxSwift error: \(error.localizedDescription)")
+//                },
+//                onCompleted: {
+//                    NSLog("RxSwift complete!")
+//                },
+//                onDisposed: {
+//                    NSLog("RxSwift disposed!")
+//                }
+//            )
+//
+//        cancellable = createPublisher(flowWrapper: repository.getThingStreamWrapper(count: 10, succeed: true))
+//            .handleEvents(receiveCancel: { NSLog("Combine canceled!") })
+//            .sink(
+//                receiveCompletion: { completion in
+//                    switch completion {
+//                    case .failure(let error):
+//                        NSLog("Combine error: \(error.localizedDescription)")
+//                    case .finished:
+//                        NSLog("Combine finished!")
+//                    }
+//                },
+//                receiveValue: { thing in
+//                    NSLog("Combine next: \(thing)")
+//                }
+//            )
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
@@ -103,3 +122,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+class DumbError : LocalizedError {
+    let errorDescription = "You dummy"
+}

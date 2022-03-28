@@ -71,3 +71,24 @@ func createOptionalFuture<T>(suspendWrapper: NullableSuspendAdapter<T>) -> AnyPu
     }
     .eraseToAnyPublisher()
 }
+
+func adaptForFlow<T: AnyObject, E: Error>(publisher: AnyPublisher<T, E>) -> InverseFlowAdapter<T> {
+    InverseFlowAdapter(
+        subscribe: { onEach, onComplete, onError in
+            let cancellable = publisher.sink { completion in
+                switch completion {
+                case .finished:
+                    let _ = onComplete()
+                case .failure(let error):
+                    let _ = onError(SwiftThrowable(error))
+                }
+            } receiveValue: { item in
+                let _ = onEach(item)
+            }
+            return {
+                cancellable.cancel()
+                return KotlinUnit()
+            }
+        }
+    )
+}

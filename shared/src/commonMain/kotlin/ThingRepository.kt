@@ -3,6 +3,7 @@ package co.touchlab.example
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlin.native.concurrent.freeze
 
 class ThingRepository {
     suspend fun getThing(succeed: Boolean): Thing {
@@ -40,4 +41,8 @@ class ThingRepository {
     }
 }
 
-data class Thing(val count: Int)
+data class Thing(val count: Int) {
+    init {
+        freeze()
+    }
+}

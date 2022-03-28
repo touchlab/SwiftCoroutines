@@ -18,3 +18,11 @@ class KotlinError: LocalizedError {
         get { throwable.message }
     }
 }
+
+class SwiftThrowable: KotlinThrowable {
+    let error: Error
+    init (_ error: Error) {
+        self.error = error
+        super.init(message: error.localizedDescription)
+    }
+}
