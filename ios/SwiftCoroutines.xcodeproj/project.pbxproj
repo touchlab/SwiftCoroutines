@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		463A518D2626473D00611EF0 /* SwiftUIDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A518C2626473D00611EF0 /* SwiftUIDemo.swift */; };
+		46409049272B627C003FCBA9 /* AsyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46409048272B627C003FCBA9 /* AsyncTests.swift */; };
+		4640904B272B62B8003FCBA9 /* ThingRepositoryAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4640904A272B62B8003FCBA9 /* ThingRepositoryAsync.swift */; };
 		46856E562491D6B500605467 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46856E552491D6B500605467 /* AppDelegate.swift */; };
 		46856E582491D6B500605467 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46856E572491D6B500605467 /* SceneDelegate.swift */; };
 		46856E5D2491D6B500605467 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46856E5B2491D6B500605467 /* Main.storyboard */; };
@@ -18,6 +20,7 @@
 		468AFF8225EC1DA100B60DF4 /* CombineWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468AFF8125EC1DA100B60DF4 /* CombineWrappers.swift */; };
 		468AFF8625EC225000B60DF4 /* KotlinError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468AFF8525EC225000B60DF4 /* KotlinError.swift */; };
 		468AFF8C25EC28C700B60DF4 /* CombineWrappersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468AFF8B25EC28C700B60DF4 /* CombineWrappersTests.swift */; };
+		46AB21AB2835834F00BF9906 /* AsyncWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB21AA2835834F00BF9906 /* AsyncWrappers.swift */; };
 		46AC5A04263B58C90057A813 /* ThingRepositoryRxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AC5A03263B58C90057A813 /* ThingRepositoryRxSwift.swift */; };
 		46AC5A0A263B5A880057A813 /* ThingRepositoryCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AC5A09263B5A880057A813 /* ThingRepositoryCombine.swift */; };
 		46AC5A0E263B5B370057A813 /* ThingRepositorySwiftCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AC5A0D263B5B370057A813 /* ThingRepositorySwiftCallbacks.swift */; };
@@ -39,6 +42,8 @@
 		183615E339339DAD7AD9FB4D /* Pods-SwiftCoroutinesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCoroutinesTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftCoroutinesTests/Pods-SwiftCoroutinesTests.release.xcconfig"; sourceTree = "<group>"; };
 		25BCFC12851E9EC9C0FE3443 /* Pods_SwiftCoroutinesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftCoroutinesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		463A518C2626473D00611EF0 /* SwiftUIDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIDemo.swift; sourceTree = "<group>"; };
+		46409048272B627C003FCBA9 /* AsyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncTests.swift; sourceTree = "<group>"; };
+		4640904A272B62B8003FCBA9 /* ThingRepositoryAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingRepositoryAsync.swift; sourceTree = "<group>"; };
 		46856E522491D6B500605467 /* SwiftCoroutines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCoroutines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46856E552491D6B500605467 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46856E572491D6B500605467 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 		468AFF8125EC1DA100B60DF4 /* CombineWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineWrappers.swift; sourceTree = "<group>"; };
 		468AFF8525EC225000B60DF4 /* KotlinError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KotlinError.swift; sourceTree = "<group>"; };
 		468AFF8B25EC28C700B60DF4 /* CombineWrappersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineWrappersTests.swift; sourceTree = "<group>"; };
+		46AB21AA2835834F00BF9906 /* AsyncWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncWrappers.swift; sourceTree = "<group>"; };
 		46AC5A03263B58C90057A813 /* ThingRepositoryRxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingRepositoryRxSwift.swift; sourceTree = "<group>"; };
 		46AC5A09263B5A880057A813 /* ThingRepositoryCombine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingRepositoryCombine.swift; sourceTree = "<group>"; };
 		46AC5A0D263B5B370057A813 /* ThingRepositorySwiftCallbacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingRepositorySwiftCallbacks.swift; sourceTree = "<group>"; };
@@ -134,8 +140,10 @@
 				46856E632491D6B700605467 /* Info.plist */,
 				46856E772491DC2200605467 /* RxSwiftWrappers.swift */,
 				468AFF8125EC1DA100B60DF4 /* CombineWrappers.swift */,
+				46AB21AA2835834F00BF9906 /* AsyncWrappers.swift */,
 				468AFF8525EC225000B60DF4 /* KotlinError.swift */,
 				46AC5A03263B58C90057A813 /* ThingRepositoryRxSwift.swift */,
+				4640904A272B62B8003FCBA9 /* ThingRepositoryAsync.swift */,
 				46AC5A09263B5A880057A813 /* ThingRepositoryCombine.swift */,
 				46AC5A0D263B5B370057A813 /* ThingRepositorySwiftCallbacks.swift */,
 			);
@@ -146,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				46856E6C2491D6B800605467 /* RxSwiftWrappersTests.swift */,
+				46409048272B627C003FCBA9 /* AsyncTests.swift */,
 				468AFF8B25EC28C700B60DF4 /* CombineWrappersTests.swift */,
 				46856E6E2491D6B800605467 /* Info.plist */,
 			);
@@ -341,10 +350,12 @@
 				46856E562491D6B500605467 /* AppDelegate.swift in Sources */,
 				468AFF8225EC1DA100B60DF4 /* CombineWrappers.swift in Sources */,
 				468AFF8625EC225000B60DF4 /* KotlinError.swift in Sources */,
+				4640904B272B62B8003FCBA9 /* ThingRepositoryAsync.swift in Sources */,
 				46856E582491D6B500605467 /* SceneDelegate.swift in Sources */,
 				46AC5A0E263B5B370057A813 /* ThingRepositorySwiftCallbacks.swift in Sources */,
 				46AC5A04263B58C90057A813 /* ThingRepositoryRxSwift.swift in Sources */,
 				46856E782491DC2200605467 /* RxSwiftWrappers.swift in Sources */,
+				46AB21AB2835834F00BF9906 /* AsyncWrappers.swift in Sources */,
 				46AC5A0A263B5A880057A813 /* ThingRepositoryCombine.swift in Sources */,
 				463A518D2626473D00611EF0 /* SwiftUIDemo.swift in Sources */,
 			);
@@ -356,6 +367,7 @@
 			files = (
 				46856E6D2491D6B800605467 /* RxSwiftWrappersTests.swift in Sources */,
 				468AFF8C25EC28C700B60DF4 /* CombineWrappersTests.swift in Sources */,
+				46409049272B627C003FCBA9 /* AsyncTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,7 +521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P8482T83LU;
 				INFOPLIST_FILE = SwiftCoroutines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,7 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P8482T83LU;
 				INFOPLIST_FILE = SwiftCoroutines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
